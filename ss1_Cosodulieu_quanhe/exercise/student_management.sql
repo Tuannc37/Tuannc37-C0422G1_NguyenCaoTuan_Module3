@@ -20,5 +20,4 @@ insert into class
 insert into teacher 
 values(1,"Tuấn",24,"Đà nẵng"),(2,"Hải",22,"Đà nẵng");
 
-select * 
-from class.name;
+select * from class;
