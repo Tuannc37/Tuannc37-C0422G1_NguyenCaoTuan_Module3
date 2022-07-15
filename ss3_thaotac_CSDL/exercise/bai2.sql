@@ -23,7 +23,7 @@ create table `order` (
 );
 
 insert into `order` (oID, cID, oDate) 
-	values 	 ('1', '1', '2006/03/21'),
+	values 	('1', '1', '2006/03/21'),
 		('2', '2', '2006/03/23'),
 		('3', '1', '2006/03/13');
 
@@ -34,7 +34,7 @@ create table product (
 );
 
 insert into product (pID, pName, pPrice)
- values  ('1', 'May Giat', '3'),
+ values ('1', 'May Giat', '3'),
 	('2', 'Tu Lanh', '5'),
 	('3', 'Dieu Hoa', '7'),
 	('4', 'Quat', '1'),
@@ -53,7 +53,7 @@ create table orderdetail (
 );
 
 insert into orderdetail (oID, pID, odQTY) 
-values 	 ('1', '1', '3'),
+values 	('1', '1', '3'),
 	('1', '3', '7'),
 	('1', '4', '2'),
 	('2', '1', '1'),
