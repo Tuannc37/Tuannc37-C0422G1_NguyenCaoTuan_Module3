@@ -209,7 +209,7 @@ create table hop_dong_chi_tiet(
 );
 
 insert into hop_dong_chi_tiet(ma_hop_dong_chi_tiet,so_luong,ma_hop_dong,ma_dich_vu_di_kem)
-values (1,5,2,4),
+values  (1,5,2,4),
 		(2,8,2,5),
 		(3,15,2,6),
 		(4,1,3,1),
