@@ -10,8 +10,8 @@ create table customer (
 
 insert into customer(cID,cName,cAge)
 values	("1","Minh Quan","10"),
-		("2","Ngoc Oanh","20"),
-		("3","Hong Ha","50");
+	("2","Ngoc Oanh","20"),
+	("3","Hong Ha","50");
 
 create table `order` (
     oID int primary key,
@@ -24,8 +24,8 @@ create table `order` (
 
 insert into `order` (oID, cID, oDate) 
 values 	('1', '1', '2006/03/21'),
-		('2', '2', '2006/03/23'),
-		('3', '1', '2006/03/13');
+	('2', '2', '2006/03/23'),
+	('3', '1', '2006/03/13');
 
 create table product (
     pID int primary key,
