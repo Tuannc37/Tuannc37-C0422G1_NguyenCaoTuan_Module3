@@ -1,3 +1,4 @@
+
 use furama_data;
 
 insert into vi_tri 
