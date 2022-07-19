@@ -49,15 +49,15 @@ insert into Student (StudentName, Address, Phone, Status, ClassId)
 	values ('Manh', 'HCM', '0123123123', 0, 2);
 
 insert into Subject
-	values  (1, 'CF', 5, 1),
-			(2, 'C', 6, 1),
-			(3, 'HDJ', 5, 1),
-			(4, 'RDBMS', 10, 1);
+values  (1, 'CF', 5, 1),
+	(2, 'C', 6, 1),
+	(3, 'HDJ', 5, 1),
+	(4, 'RDBMS', 10, 1);
        
 insert into Mark (SubId, StudentId, Mark, ExamTimes)
-	values  (1, 1, 8, 1),
-			(1, 2, 10, 2),
-			(2, 1, 12, 1);
+values  (1, 1, 8, 1),
+	(1, 2, 10, 2),
+	(2, 1, 12, 1);
             
 -- Hiển thị tất cả các sinh viên có tên bắt đầu bảng ký tự ‘h’ 
 select *
