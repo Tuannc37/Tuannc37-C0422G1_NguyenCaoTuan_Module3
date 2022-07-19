@@ -130,7 +130,6 @@ select distinct
 from
     khach_hang;
     
-    
 -- Cách 3:
 select 
     t.ho_ten
@@ -140,19 +139,19 @@ from
     from
         khach_hang
     group by ho_ten
-    having a > 1) as t;
+    having a = 1) as t;
 
 -- task9:
 -- Thực hiện thống kê doanh thu theo tháng của năm 2021.
 select 
-    month(hd.ngay_lam_hop_dong) as `#thang`,
+    month(hd.ngay_lam_hop_dong) as thang,
     count(month(hd.ngay_lam_hop_dong)) as so_luong_khach_hang
 from
     hop_dong hd
 where
     year(hd.ngay_lam_hop_dong) = '2021'
-group by `#thang`
-order by `#thang`;
+group by thang
+order by thang;
 
 -- task10:
 -- hiển thị thông tin tương ứng với từng hợp đồng thì đã sử dụng bao nhiêu dịch vụ đi kèm.
