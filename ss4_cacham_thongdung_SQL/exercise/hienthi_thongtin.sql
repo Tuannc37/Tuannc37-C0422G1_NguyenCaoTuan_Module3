@@ -1,9 +1,7 @@
 use QuanLySinhVien_ss4;
 
 -- Hiển thị tất cả các thông tin môn học (bảng subject) có credit lớn nhất.
-
-select 
-    *
+select *
 from
     `Subject` s
 where
@@ -14,8 +12,7 @@ where
             
 -- Hiển thị các thông tin môn học có điểm thi lớn nhất.
 
-select 
-    s.*
+select s.*
 from
     `Subject` s
         join
@@ -29,8 +26,7 @@ where
 
 -- Hiển thị các thông tin sinh viên và điểm trung bình của mỗi sinh viên, xếp hạng theo thứ tự điểm giảm dần
 
-select 
-    s.*, avg(m.Mark) as diem_trung_binh
+select s.*, avg(m.Mark) as diem_trung_binh
 from
     Student s
         left join

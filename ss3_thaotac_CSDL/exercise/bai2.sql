@@ -66,8 +66,7 @@ select o.oID,o.oDate,o.oTotalPrice as `order`
 from `order` o;
 
 -- Hiển thị danh sách các khách hàng đã mua hàng, và danh sách sản phẩm được mua bởi các khách
-select 
-    c.cID, cName, pName
+select c.cID, cName, pName
 from
     customer c
         join
@@ -78,8 +77,7 @@ from
     product p on od.pID = p.pID;
 
 -- Hiển thị tên những khách hàng không mua bất kỳ một sản phẩm nào
-select 
-    c.cID, c.cName, o.oDate
+select c.cID, c.cName, o.oDate
 from
     customer c
         left join
@@ -88,8 +86,7 @@ where
     o.oID is null;
 
 -- Hiển thị mã hóa đơn, ngày bán và giá tiền của từng hóa đơn (giá một hóa đơn được tính bằng tổng giá bán của từng loại mặt hàng xuất hiện trong hóa đơn. Giá bán của từng loại được tính = odQTY*pPrice)
-select 
-    o.oID, oDate, sum(odQTY * pPrice) as total
+select o.oID, oDate, sum(odQTY * pPrice) as total
 from
     `order` o
         join
