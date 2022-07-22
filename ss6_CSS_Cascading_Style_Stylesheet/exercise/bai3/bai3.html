@@ -5,43 +5,79 @@
     <title>Title</title>
     <style>
         * {
-            margin: 0;
-            padding: 0;
+            margin:0px;
+            padding:0px;
         }
-        div#menu {
-            background-color: #d9e8e9;
+        ul {
+            display:block;
+            clear:both;
         }
 
-        #menu ul {
-            list-style-type: none;
-            text-align: center;
-            overflow: hidden;
-            width: 100%;
+        #menu {
+            width:100%;
+            margin:0px auto;
+            background:#436a89;
+            height: 43px;
         }
         #menu li {
-            color: #f1f1f1;
-            display: inline-block;
-            width: 120px;
-            height: 40px;
-            line-height: 40px;
-            padding: 0 60px;
-            float: left;
+            list-style:none;
+            font-family:'Ek Mukta';
+        }
+        #menu a {
+            transition:all linear 0.15s;
+            color:white;
+            text-decoration:none;
+        }
+        #menu li:hover {
+            text-decoration:none;
+            color:#be5b70;
         }
 
-        #menu a {
-            text-decoration: none;
-            color: royalblue;
-            display: block;
-            font-size: 20px;
+        #menu > ul > li {
+            float:left;
+            display:inline-block;
+            position:relative;
+            font-size:19px;
         }
-        #menu .menu_hover a:hover {
-            background-color: green;
-            color: #f1f1f1;
+        #menu > ul > li > a {
+            padding:10px 40px;
+            display:inline-block;
+            color:white;
         }
+        .menu_hover :hover{
+            background:#2e2728;
+        }
+
+        #menu li:hover .sub-menu {
+            z-index:1;
+            opacity:1;
+        }
+        .sub-menu {
+            width: 100%;
+            position: absolute;
+            opacity: 0;
+            transition: opacity linear 0.15s;
+            box-shadow:0px 2px 3px rgba(0,0,0,0.2);
+            background: #2e2728;
+        }
+        .sub-menu li {
+            display:block;
+            font-size:16px;
+        }
+        .sub-menu li a {
+            padding:10px 30px;
+            display:block;
+        }
+        .sub-menu li a:hover {
+            background: #436a89;;
+        }
+
         input#search {
             border-radius: 5px;
-            height: 28px;
+            height: 30px;
             background-color: aliceblue;
+            margin-top: 6px;
+            width: 200px;
         }
         .story {
             width: 15%;
@@ -89,10 +125,40 @@
     <div class="container">
         <div id="menu">
             <ul>
-                <li class = "menu_hover"><a href="#">Trang chủ</a></li>
-                <li class = "menu_hover" id = "dropdown"><a href="#">Danh sách</a></li>
-                <li class = "menu_hover"><a href="#">Thể loại</a></li>
-                <li class = "menu_hover"><a href="#">Lọc truyện</a></li>
+                <li class = "menu_hover"><a href="#">TRANG CHỦ</a></li>
+                <li class = "menu_hover" id = "dropdown"><a href="#">DANH SÁCH</a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="https://sstruyen.com/the-loai/tien-hiep/">DANH SÁCH 1</a>
+                        </li>
+                        <li>
+                            <a href="https://sstruyen.com/the-loai/tien-hiep/">DANH SÁCH 2</a>
+                        </li>
+                        <li>
+                            <a href="https://sstruyen.com/the-loai/tien-hiep/">DANH SACH 3</a>
+                        </li>
+                        <li>
+                            <a href="https://sstruyen.com/the-loai/tien-hiep/">DANH SÁCH 4</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class = "menu_hover"><a href="#">THỂ LOẠI</a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="https://sstruyen.com/danh-sach/kiem-hiep-hay/">ĐAM MỸ</a>
+                        </li>
+                        <li>
+                            <a href="https://sstruyen.com/danh-sach/kiem-hiep-hay/">NGÔN TÌNH</a>
+                        </li>
+                        <li>
+                            <a href="https://sstruyen.com/danh-sach/kiem-hiep-hay/">KIẾM HIỆP</a>
+                        </li>
+                        <li>
+                            <a href="https://sstruyen.com/danh-sach/kiem-hiep-hay/">CHUYỆN MA</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class = "menu_hover"><a href="#">LỌC TRUYỆN</a></li>
                 <li><a href="#"></a>
                     <input type="search" id="search" placeholder="Tìm kiếm..." />
                 </li>
