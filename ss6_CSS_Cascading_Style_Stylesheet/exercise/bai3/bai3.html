@@ -27,20 +27,21 @@
             padding: 0 60px;
             float: left;
         }
-        
+
         #menu a {
             text-decoration: none;
             color: royalblue;
             display: block;
             font-size: 20px;
         }
-        #menu a:hover {
+        #menu .menu_hover a:hover {
             background-color: green;
             color: #f1f1f1;
         }
         input#search {
             border-radius: 5px;
             height: 28px;
+            background-color: aliceblue;
         }
         .truyen {
             width: 15%;
@@ -82,10 +83,10 @@
     <div class="container">
         <div id="menu">
             <ul>
-                <li><a href="#">Trang chủ</a></li>
-                <li><a href="#">Danh sách</a></li>
-                <li><a href="#">Thể loại</a></li>
-                <li><a href="#">Lọc truyện</a></li>
+                <li class = "menu_hover"><a href="#">Trang chủ</a></li>
+                <li class = "menu_hover"><a href="#">Danh sách</a></li>
+                <li class = "menu_hover"><a href="#">Thể loại</a></li>
+                <li class = "menu_hover"><a href="#">Lọc truyện</a></li>
                 <li><a href="#">
                     <input type="search" id="search" placeholder="Tìm kiếm..." />
                 </a></li>
