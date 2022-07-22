@@ -331,14 +331,13 @@ set foreign_key_checks =0;
 delete from khach_hang 
 where
     ma_khach_hang in (select 
-        ma_khach_hang
+        tmp.ma_khach_hang
     from
         (select 
             kh.ma_khach_hang
         from
             khach_hang kh
         join hop_dong hd on kh.ma_khach_hang = hd.ma_khach_hang
-        
         where
             year(hd.ngay_lam_hop_dong) < 2021) as tmp);
 set foreign_key_checks =1;
@@ -350,7 +349,7 @@ set
     gia = gia * 2
 where
     ma_dich_vu_di_kem in (select 
-            ma_dich_vu_di_kem
+            tmp.ma_dich_vu_di_kem
         from
             (select 
                 dvdk.ma_dich_vu_di_kem
