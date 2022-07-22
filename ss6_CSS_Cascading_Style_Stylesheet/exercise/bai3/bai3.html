@@ -43,7 +43,7 @@
             height: 28px;
             background-color: aliceblue;
         }
-        .truyen {
+        .story {
             width: 15%;
             float: left;
             margin-right: 18px;
@@ -53,15 +53,15 @@
             font-size: 16px;
             font-family: serif;
         }
-        .danhsach_truyen {
+        .list_story {
             margin-top: 50px;
             margin-left: 70px;
         }
 
-        div#danhsach_thunhat {
+        div#list_one {
             height: 300px;
         }
-        div#danhsach_thuhai {
+        div#list_two {
             margin-top: 20px;
         }
 
@@ -84,89 +84,101 @@
         <div id="menu">
             <ul>
                 <li class = "menu_hover"><a href="#">Trang chủ</a></li>
-                <li class = "menu_hover"><a href="#">Danh sách</a></li>
+                <li class = "menu_hover" id = "dropdown"><a href="#">Danh sách</a>
+                    <ul class="submenu">
+                        <li>
+                            <a href="">Truyện đam mỹ</a>
+                        </li>
+                        <li>
+                            <a href="">Truyện ngôn tình</a>
+                        </li>
+                        <li>
+                            <a href="">Truyện kiếm hiệp</a>
+                        </li>
+                    </ul>
+                </li>
                 <li class = "menu_hover"><a href="#">Thể loại</a></li>
                 <li class = "menu_hover"><a href="#">Lọc truyện</a></li>
-                <li><a href="#">
+                <li><a href="#"></a>
                     <input type="search" id="search" placeholder="Tìm kiếm..." />
-                </a></li>
+                </li>
             </ul>
         </div>
 
-        <div class="danhsach_truyen">
-            <div id="danhsach_thunhat">
-                <div class="truyen">
-                    <div class="img_truyen">
+        <div class="list_story">
+            <div id="list_one">
+                <div class="story">
+                    <div class="img_story">
                         <a href="http://khotruyen.com.vn/truyen-tranh/yugi-oh%20">
                             <img src="http://khotruyen.com.vn/uploads/yugi-oh-1494208203..jpg" alt="">
                         </a>
                     </div>
-                    <div class="tieude_truyen">
+                    <div class="title-story">
                         <h5>YUGI-OH!</h5>
                         <div class="rate">
                            9,5/10
                         </div>
                     </div>
                 </div>
-                <div class="truyen">
-                    <div class="img_truyen">
+                <div class="story">
+                    <div class="img_story">
                         <a href="http://khotruyen.com.vn/truyen-tranh/yugi-oh%20">
                             <img src="http://khotruyen.com.vn/uploads/dragon-ball-af-toyble-1494208435..jpg" alt="">
                         </a>
                     </div>
-                    <div class="tieude_truyen">
+                    <div class="title-story">
                         <h5>Dragon Ball AF Toyble</h5>
                         <div class="rate">
                             9/10
                         </div>
                     </div>
                 </div>
-                <div class="truyen">
-                    <div class="img_truyen">
+                <div class="story">
+                    <div class="img_story">
                         <a href="http://khotruyen.com.vn/truyen-tranh/yugi-oh%20">
                             <img src="http://khotruyen.com.vn/uploads/spider-man-the-manga-1494322629..jpg" alt="">
                         </a>
                     </div>
-                    <div class="tieude_truyen">
+                    <div class="title-story">
                         <h5>Spider Man - The Manga</h5>
                         <div class="rate">
                             7.5/10
                         </div>
                     </div>
                 </div>
-                <div class="truyen">
-                    <div class="img_truyen">
+                <div class="story">
+                    <div class="img_story">
                         <a href="http://khotruyen.com.vn/truyen-tranh/yugi-oh%20">
                             <img src="http://khotruyen.com.vn/uploads/yugi-oh-1494208203..jpg" alt="">
                         </a>
                     </div>
-                    <div class="tieude_truyen">
+                    <div class="title-story">
                         <h5>YUGI-OH!</h5>
                         <div class="rate">
                             9,5/10
                         </div>
                     </div>
                 </div>
-                <div class="truyen">
-                    <div class="img_truyen">
+                <div class="story">
+                    <div class="img_story">
                         <a href="http://khotruyen.com.vn/truyen-tranh/yugi-oh%20">
                             <img src="http://khotruyen.com.vn/uploads/dragon-ball-af-toyble-1494208435..jpg" alt="">
                         </a>
                     </div>
-                    <div class="tieude_truyen">
+                    <div class="title-story">
                         <h5>Dragon Ball AF Toyble</h5>
                         <div class="rate">
                             9/10
                         </div>
                     </div>
                 </div>
-                <div class="truyen">
-                    <div class="img_truyen">
+                <div class="story">
+                    <div class="img_story">
                         <a href="http://khotruyen.com.vn/truyen-tranh/yugi-oh%20">
                             <img src="http://khotruyen.com.vn/uploads/spider-man-the-manga-1494322629..jpg" alt="">
                         </a>
                     </div>
-                    <div class="tieude_truyen">
+                    <div class="title-story">
                         <h5>Spider Man - The Manga</h5>
                         <div class="rate">
                             7.5/10
@@ -175,79 +187,79 @@
                 </div>
             </div>
 
-            <div id="danhsach_thuhai">
-                <div class="truyen">
-                    <div class="img_truyen">
+            <div id="list_two">
+                <div class="story">
+                    <div class="img_story">
                         <a href="http://khotruyen.com.vn/truyen-tranh/yugi-oh%20">
                             <img src="http://khotruyen.com.vn/uploads/yugi-oh-1494208203..jpg" alt="">
                         </a>
                     </div>
-                    <div class="tieude_truyen">
+                    <div class="title-story">
                         <h5>YUGI-OH!</h5>
                         <div class="rate">
                             9,5/10
                         </div>
                     </div>
                 </div>
-                <div class="truyen">
-                    <div class="img_truyen">
+                <div class="story">
+                    <div class="img_story">
                         <a href="http://khotruyen.com.vn/truyen-tranh/yugi-oh%20">
                             <img src="http://khotruyen.com.vn/uploads/dragon-ball-af-toyble-1494208435..jpg" alt="">
                         </a>
                     </div>
-                    <div class="tieude_truyen">
+                    <div class="title-story">
                         <h5>Dragon Ball AF Toyble</h5>
                         <div class="rate">
                             9/10
                         </div>
                     </div>
                 </div>
-                <div class="truyen">
-                    <div class="img_truyen">
+                <div class="story">
+                    <div class="img_story">
                         <a href="http://khotruyen.com.vn/truyen-tranh/yugi-oh%20">
                             <img src="http://khotruyen.com.vn/uploads/spider-man-the-manga-1494322629..jpg" alt="">
                         </a>
                     </div>
-                    <div class="tieude_truyen">
+                    <div class="title-story">
                         <h5>Spider Man - The Manga</h5>
                         <div class="rate">
                             7.5/10
                         </div>
                     </div>
                 </div>
-                <div class="truyen">
-                    <div class="img_truyen">
+                <div class="story">
+                    <div class="img_story">
                         <a href="http://khotruyen.com.vn/truyen-tranh/yugi-oh%20">
                             <img src="http://khotruyen.com.vn/uploads/yugi-oh-1494208203..jpg" alt="">
                         </a>
                     </div>
-                    <div class="tieude_truyen">
+                    <div class="title-story">
                         <h5>YUGI-OH!</h5>
                         <div class="rate">
                             9,5/10
                         </div>
                     </div>
                 </div>
-                <div class="truyen">
-                    <div class="img_truyen">
+                <div class="story">
+                    <div class="img_story">
                         <a href="http://khotruyen.com.vn/truyen-tranh/yugi-oh%20">
                             <img src="http://khotruyen.com.vn/uploads/dragon-ball-af-toyble-1494208435..jpg" alt="">
                         </a>
                     </div>
-                    <div class="tieude_truyen">
+                    <div class="title-story">
                         <h5>Dragon Ball AF Toyble</h5>
                         <div class="rate">
                             9/10
                         </div>
                     </div>
                 </div>
-                <div class="truyen">
-                    <div class="img_truyen">
+                <div class="story">
+                    <div class="img_story">
                         <a href="http://khotruyen.com.vn/truyen-tranh/yugi-oh%20">
                             <img src="http://khotruyen.com.vn/uploads/spider-man-the-manga-1494322629..jpg" alt="">
                         </a>
                     </div>
-                    <div class="tieude_truyen">
+                    <div class="title-story">
                         <h5>Spider Man - The Manga</h5>
                         <div class="rate">
                             7.5/10
