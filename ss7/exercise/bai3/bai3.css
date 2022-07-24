@@ -1,0 +1,143 @@
+#header-menu{
+    height: 50px;
+    background-color: black;;
+    width: 100%;
+}
+#content{
+    width: 100%;
+    height: 500px;
+}
+#content-left{
+    width: 20%;
+    height: 500px;
+    background-color: #f1f1f1;
+    float: left;
+}
+#content-between{
+    width: 60%;
+    height: 500px;
+    background-color: white;
+    float: left;
+}
+#content-right{
+    width: 20%;
+    height: 500px;
+    background-color: #f1f1f1;
+    float: left;
+}
+#footer{
+    height: 60px;
+    background-color: #242222;
+    width: 100%;
+    clear: both;
+    margin-top: -20px;
+}
+
+.header-menu-left{
+    width: 75%;
+    height: 50px;
+    float: left;
+}
+.header-menu-left ul{
+    list-style-type: none;
+}
+.header-menu-left ul li {
+    float: left;
+    margin-right: 40px;
+}
+.header-menu-left ul li a{
+    text-decoration: none;
+    text-decoration: none;
+    padding: 15px 15px;
+    font-family: sans-serif;
+    font-size: 18px;
+    color: #afa9a9;;
+}
+
+
+.header-menu-right{
+    width: 25%;
+    height: 50px;
+    float: left;
+}
+.header-menu-right a{
+    text-decoration: none;
+    position: relative;
+    left: 210px;
+    top: 11px;
+    font-size: 18px;
+    font-family: sans-serif;
+    color: #afa9a9;
+}
+.header-menu-right img{
+    width: 30px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+#content-left ul {
+    margin-left: 40px;
+    list-style-type: none;
+    margin-top: 50px;
+}
+#content-left ul li{
+    margin-bottom: 20px;
+}
+#content-left ul li a{
+    text-decoration: none;
+    font-size: 16px;
+    font-family: sans-serif;
+    color: #4198bf;
+}
+
+.content-between-top {
+    margin: 0px 10px 0px 10px;
+}
+
+
+
+.content-between-bottom {
+    margin-left: 10px;
+}
+h1 ,h2{
+    font-family: sans-serif;
+    font-weight: revert;
+    color: black;
+}
+.content-between-top p,.content-between-bottom p {
+    font-size: 14px;
+    font-family: sans-serif;
+}
+hr{
+    color: #afa9a9;
+}
+
+.box-right{
+    width: 220px;
+    height: 100px;
+    border: 1px solid slategrey;
+    margin-left: 25px;
+    margin-bottom: 19px;
+    border-width: 2px;
+    background-color: white;
+    border-radius: 5px;
+
+}
+#content-right-one{
+    margin-top: 40px;
+}
+h3 {
+    text-align: center;
+    margin-top: 37px;
+    color: slategray;
+    font-family: sans-serif;
+}
+
+#footer p{
+    text-align: center;
+    position: relative;
+    top: 21px;
+    font-size: 20px;
+    color: #afa9a9;
+    font-family: sans-serif;
+}
