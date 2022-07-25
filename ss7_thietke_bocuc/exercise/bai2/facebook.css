@@ -40,6 +40,10 @@
     top: 0;
 }
 
+.menu .col-12 .col-3,.menu .col-12 .col-6{
+    height: 62px;
+}
+
 .menu-left img {
     width: 45px;
     -webkit-border-radius: 50%;
