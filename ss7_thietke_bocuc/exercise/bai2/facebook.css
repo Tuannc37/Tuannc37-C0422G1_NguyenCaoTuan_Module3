@@ -106,6 +106,7 @@ input[type="text"] {
     -webkit-border-radius: 50%;
     float: left;
     background-color: white;
+    margin-top: -2px;
 }
 
 .content .col-6{
