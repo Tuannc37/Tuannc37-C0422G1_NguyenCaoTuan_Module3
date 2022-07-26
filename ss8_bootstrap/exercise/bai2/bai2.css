@@ -47,6 +47,9 @@ h6.text-uppercase.fw-bold {
 a.text-white {
     text-decoration: none;
 }
+.container-fluid.main-two {
+    margin-top: 40px;
+}
 
 
 
