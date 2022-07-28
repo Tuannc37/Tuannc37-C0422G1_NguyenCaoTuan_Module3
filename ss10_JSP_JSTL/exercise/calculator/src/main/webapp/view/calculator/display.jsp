@@ -13,6 +13,5 @@
 </head>
 <body>
 <h1>Kết quả là :${number1}${operator}${number2}=${KetQua}</h1>
-<%--<c:redirect url="/calculator"></c:redirect>--%>
 </body>
 </html>

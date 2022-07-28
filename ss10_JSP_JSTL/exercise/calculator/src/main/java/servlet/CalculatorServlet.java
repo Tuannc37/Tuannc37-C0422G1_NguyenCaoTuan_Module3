@@ -24,7 +24,7 @@ public class CalculatorServlet extends HttpServlet {
 
         float result = Calculator.calculate(firstOperand,secondOperand,operator);
 
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("display.jsp");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("view/calculator/display.jsp");
         request.setAttribute("number1", firstOperand);
         request.setAttribute("number2", secondOperand);
         request.setAttribute("operator", operator);
