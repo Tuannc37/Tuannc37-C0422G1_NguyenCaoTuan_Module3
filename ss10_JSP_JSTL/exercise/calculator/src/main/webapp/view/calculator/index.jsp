@@ -30,7 +30,6 @@
                     <td><input name="second-operand" type="text"/></td>
                 </tr>
                 <tr>
-                    <td></td>
                     <td><input type="submit" value="Calculate"/></td>
                 </tr>
             </table>
