@@ -34,7 +34,7 @@
                     <td><input type="submit" value="Calculate"/></td>
                 </tr>
             </table>
-            </fieldset>
+        </fieldset>
     </form>
 </body>
 </html>
