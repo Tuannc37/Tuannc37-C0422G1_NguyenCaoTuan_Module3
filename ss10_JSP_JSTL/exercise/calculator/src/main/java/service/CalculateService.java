@@ -1,14 +1,14 @@
 package model;
 
-public class Calculator {
+public class CalculateService {
     private float number1;
     private float number2;
     private char operator;
 
-    public Calculator() {
+    public CalculateService() {
     }
 
-    public Calculator(float number1, float number2, char operator) {
+    public CalculateService(float number1, float number2, char operator) {
         this.number1 = number1;
         this.number2 = number2;
         this.operator = operator;
@@ -38,17 +38,17 @@ public class Calculator {
         this.operator = operator;
     }
 
-    public static float calculate(float number1, float number2, char operator ){
+    public static float calculate(float firstOperand, float secondOperand, char operator ){
         switch (operator){
             case '+':
-                return number1 + number2;
+                return firstOperand + secondOperand;
             case '-':
-                return number1 - number2;
+                return firstOperand - secondOperand;
             case '*':
-                return number1 * number2;
+                return firstOperand * secondOperand;
             case '/':
-                if(number2 != 0)
-                    return number1 / number2;
+                if(secondOperand != 0)
+                    return firstOperand / secondOperand;
                 else
                     throw new RuntimeException("Can't divide by zero");
             default:
