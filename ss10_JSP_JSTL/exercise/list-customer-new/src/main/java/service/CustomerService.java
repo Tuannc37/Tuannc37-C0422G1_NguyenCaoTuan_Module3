@@ -1,15 +1,15 @@
-package model;
+package service;
 
-public class Customer {
+public class CustomerService {
     private String name;
     private String birthday;
     private String address;
     private  String images;
 
-    public Customer() {
+    public CustomerService() {
     }
 
-    public Customer(String name, String birthday, String address,String images) {
+    public CustomerService(String name, String birthday, String address,String images) {
         this.name = name;
         this.birthday = birthday;
         this.address = address;

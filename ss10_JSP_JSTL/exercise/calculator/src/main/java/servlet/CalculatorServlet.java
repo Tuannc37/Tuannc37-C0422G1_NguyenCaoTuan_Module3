@@ -1,6 +1,8 @@
 package servlet;
 
 
+import service.CalculateService;
+
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
@@ -21,7 +23,7 @@ public class CalculatorServlet extends HttpServlet {
         float secondOperand = Float.parseFloat(request.getParameter("second-operand"));
         char operator = request.getParameter("operator").charAt(0);
 
-        float result =  model.CalculateService.calculate(firstOperand,secondOperand,operator);
+        float result =  CalculateService.calculate(firstOperand,secondOperand,operator);
 
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("view/calculator/display.jsp");
         request.setAttribute("number1", firstOperand);
