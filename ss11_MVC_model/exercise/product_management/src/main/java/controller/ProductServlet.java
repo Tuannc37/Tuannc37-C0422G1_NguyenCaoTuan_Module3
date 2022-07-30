@@ -61,7 +61,6 @@ public class ProductServlet extends HttpServlet {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 
     private void viewProduct(HttpServletRequest request, HttpServletResponse response) {
@@ -216,8 +215,6 @@ public class ProductServlet extends HttpServlet {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
     }
 
     private void createProduct(HttpServletRequest request, HttpServletResponse response) {
