@@ -10,12 +10,36 @@
 <html>
 <head>
     <title>Title</title>
+    <style>
+        a {
+            background-color: #cdc2c2;
+            border-radius: 3px;
+            color: #280d05;
+        }
+        h1 {
+            text-align: center;
+            font-family: serif;
+            color: royalblue;
+        }
+        p {
+            text-align: center;
+        }
+        table {
+            margin: 0 auto;
+            width: 40%;
+            height: 200px;
+            border: none;
+            font-family: system-ui;
+            text-align: center;
+            background-color: #ede4e4;
+        }
+    </style>
 </head>
 <body>
     <h1>Trang thêm mới</h1>
-    <a href="/product">Quay lại trang list</a>
-    <c:if test="${mess!=null}">
-        <p>${mess}</p>
+    <p> <a href="/product">Quay lại trang list</a></p>
+    <c:if test="${message!=null}">
+        <p>${message}</p>
     </c:if>
 
     <form action="/product?action=create" method="post">

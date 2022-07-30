@@ -207,7 +207,7 @@ public class ProductServlet extends HttpServlet {
         Product product = new Product(id, nameProduct, price, description, producer);
         productService.update(product.getId(),product);
         RequestDispatcher dispatcher = request.getRequestDispatcher("view/product/edit.jsp");
-        request.setAttribute("mess", "Them moi thanh cong");
+        request.setAttribute("message", "Update thanh cong");
         showUpdateProduct(request, response);
         try {
             dispatcher.forward(request, response);
@@ -230,7 +230,7 @@ public class ProductServlet extends HttpServlet {
         Product product = new Product(id,nameProduct,price,description,producer);
         productService.create(product);
         RequestDispatcher dispatcher = request.getRequestDispatcher("view/product/create.jsp");
-        request.setAttribute("mess", "Them moi thanh cong");
+        request.setAttribute("message", "Them moi thanh cong");
         showCreateProduct(request,response);
         try {
             dispatcher.forward(request, response);
