@@ -45,14 +45,23 @@ public class ProductServlet extends HttpServlet {
     }
 
     private void searchByName(HttpServletRequest request, HttpServletResponse response) {
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/view/product/search.jsp");
+        String nameProduct = request.getParameter("name");
+        List<Product> productList = productService.findByName(nameProduct);
+        RequestDispatcher dispatcher;
+        if(productList == null){
+            dispatcher = request.getRequestDispatcher("view/error-404.jsp");
+        } else {
+            request.setAttribute("productList", productList);
+            dispatcher = request.getRequestDispatcher("view/product/search.jsp");
+        }
         try {
-            requestDispatcher.forward(request,response);
+            dispatcher.forward(request, response);
         } catch (ServletException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
+
     }
 
     private void viewProduct(HttpServletRequest request, HttpServletResponse response) {
@@ -175,7 +184,7 @@ public class ProductServlet extends HttpServlet {
     private void deleteProduct(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("id"));
         Product product = this.productService.findById(id);
-        RequestDispatcher dispatcher;
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/view/product/delete.jsp");
         if(product == null){
             dispatcher = request.getRequestDispatcher("view/error-404.jsp");
         } else {

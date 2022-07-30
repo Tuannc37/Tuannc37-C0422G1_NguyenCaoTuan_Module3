@@ -12,7 +12,6 @@
     <title>$Title$</title>
   </head>
   <body>
-  <a href="http://localhost:8080/product">Home</a>
   <c:redirect url="product"></c:redirect>
   </body>
 </html>
