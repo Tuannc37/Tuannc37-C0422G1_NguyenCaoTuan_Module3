@@ -68,7 +68,6 @@ public class ProductRepository implements IProductRepository {
         for(int i = 0; i < productList.size();i++){
             if(productList.get(i).getId() == id){
                 product = productList.get(i);
-                break;
             }
         }
         return product;
