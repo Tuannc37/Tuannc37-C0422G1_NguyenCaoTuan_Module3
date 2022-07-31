@@ -5,6 +5,7 @@ import repository.IProductRepository;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class ProductRepository implements IProductRepository {
     private static List<Product> productList = new ArrayList<>();
@@ -54,7 +55,7 @@ public class ProductRepository implements IProductRepository {
     public  List<Product> findByName(String name) {
         List<Product> productList1 = new ArrayList<>();
         for (Product p : productList) {
-            if (p.getNameProduct().equals(name)) {
+            if (p.getNameProduct().toLowerCase(Locale.ROOT).contains(name.toLowerCase(Locale.ROOT))) {
                 productList1.add(p);
             }
         }

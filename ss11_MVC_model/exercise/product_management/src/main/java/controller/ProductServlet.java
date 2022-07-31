@@ -52,7 +52,7 @@ public class ProductServlet extends HttpServlet {
             dispatcher = request.getRequestDispatcher("view/error-404.jsp");
         } else {
             request.setAttribute("productList", productList);
-            dispatcher = request.getRequestDispatcher("view/product/search.jsp");
+            dispatcher = request.getRequestDispatcher("view/product/list.jsp");
         }
         try {
             dispatcher.forward(request, response);
@@ -169,7 +169,7 @@ public class ProductServlet extends HttpServlet {
     private void findNameProduct(HttpServletRequest request, HttpServletResponse response) {
         String name = request.getParameter("name");
         List<Product> productList = productService.findByName(name);
-        RequestDispatcher requestDispatcher= request.getRequestDispatcher("/view/product/search.jsp");
+        RequestDispatcher requestDispatcher= request.getRequestDispatcher("/view/product/list.jsp");
         request.setAttribute("productList",productList);
         try {
             requestDispatcher.forward(request,response);
