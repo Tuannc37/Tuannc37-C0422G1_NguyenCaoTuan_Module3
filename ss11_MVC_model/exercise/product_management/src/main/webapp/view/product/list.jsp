@@ -13,6 +13,9 @@
             padding: 8px 20px;
             text-decoration: none;
         }
+        p{
+            text-align: center;
+        }
         h1 {
             text-align: center;
             font-family: serif;
@@ -42,6 +45,7 @@
                 <input type="text" name="name" placeholder="Nhập tên sản phẩm cần tìm">
                 <button class="bg-primary text-white" type="submit">Submit</button>
             </form>
+            <p><a class="bg-primary text-white" href="/product?action=create&id=${product.id}">Create Product</a></p>
         </div>
     </div>
     <table border="1">
@@ -54,7 +58,6 @@
             <th>Edit</th>
             <th>Delete</th>
             <th>View</th>
-            <th>Create</th>
         </tr>
         <c:forEach var="product" items="${productList}" varStatus="status">
             <tr>
@@ -91,7 +94,6 @@
                     </div>
                 </td>
                 <td><a class="bg-primary text-white" href="/product?action=view&id=${product.id}">View</a></td>
-                <td><a class="bg-primary text-white" href="/product?action=create&id=${product.id}">Create</a></td>
             </tr>
         </c:forEach>
     </table>
