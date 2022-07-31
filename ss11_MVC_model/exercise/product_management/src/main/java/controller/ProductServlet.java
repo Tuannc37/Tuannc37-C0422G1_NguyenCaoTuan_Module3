@@ -84,21 +84,8 @@ public class ProductServlet extends HttpServlet {
 
     private void showDeleteForm(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("id"));
-        Product product = productService.findById(id);
-        RequestDispatcher dispatcher;
-        if(product == null){
-            dispatcher = request.getRequestDispatcher("view/error-404.jsp");
-        } else {
-            request.setAttribute("product", product);
-            dispatcher = request.getRequestDispatcher("view/product/delete.jsp");
-        }
-        try {
-            dispatcher.forward(request, response);
-        } catch (ServletException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        productService.delete(id);
+        showListProduct(request,response);
     }
 
     private void showUpdateProduct(HttpServletRequest request, HttpServletResponse response) {
@@ -155,9 +142,6 @@ public class ProductServlet extends HttpServlet {
             case "update":
                 updateProduct(request, response);
                 break;
-            case "delete":
-                deleteProduct(request, response);
-                break;
             case "find":
                 findNameProduct(request,response);
                 break;
@@ -177,22 +161,6 @@ public class ProductServlet extends HttpServlet {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
-        }
-    }
-
-    private void deleteProduct(HttpServletRequest request, HttpServletResponse response) {
-        int id = Integer.parseInt(request.getParameter("id"));
-        Product product = this.productService.findById(id);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/view/product/delete.jsp");
-        if(product == null){
-            dispatcher = request.getRequestDispatcher("view/error-404.jsp");
-        } else {
-            this.productService.delete(id);
-            try {
-                response.sendRedirect("/product");
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
         }
     }
 

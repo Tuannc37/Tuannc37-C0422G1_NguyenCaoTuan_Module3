@@ -4,11 +4,14 @@
 <html>
 <head>
     <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <style>
         a {
             background-color: #cdc2c2;
-            border-radius: 3px;
-            color: #280d05;
+            border-radius: 7px;
+            padding: 8px 20px;
+            text-decoration: none;
         }
         h1 {
             text-align: center;
@@ -26,6 +29,9 @@
         form {
             text-align: center;
         }
+        input[type="text"],.search button {
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
@@ -34,7 +40,7 @@
         <div class = search>
             <form action="/product?action=find" method="post">
                 <input type="text" name="name" placeholder="Nhập tên sản phẩm cần tìm">
-                <button type="submit">Submit</button>
+                <button class="bg-primary text-white" type="submit">Submit</button>
             </form>
         </div>
     </div>
@@ -57,12 +63,38 @@
                 <td>${product.price}</td>
                 <td>${product.description}</td>
                 <td>${product.producer}</td>
-                <td><a href="/product?action=update&id=${product.id}">edit</a></td>
-                <td><a href="/product?action=delete&id=${product.id}">delete</a></td>
-                <td><a href="/product?action=view&id=${product.id}">view</a></td>
-                <td><a href="/product?action=create&id=${product.id}">create</a></td>
+                <td><a class="bg-primary text-white" href="/product?action=update&id=${product.id}">Edit</a></td>
+                <td>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#delete">
+                        Delete
+                    </button>
+                    <div class="modal fade" id="delete" tabindex="-1" aria-labelledby="exampleModalLabel"
+                         aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Delete product</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    Are you sure that you want to delete this product ?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <a href="/product?action=delete&id=${product.id}">
+                                        <button type="button" class="btn btn-primary">Yes</button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td><a class="bg-primary text-white" href="/product?action=view&id=${product.id}">View</a></td>
+                <td><a class="bg-primary text-white" href="/product?action=create&id=${product.id}">Create</a></td>
             </tr>
         </c:forEach>
     </table>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
 </body>
 </html>
