@@ -68,10 +68,10 @@
                 <td>${product.producer}</td>
                 <td><a class="bg-primary text-white" href="/product?action=update&id=${product.id}">Edit</a></td>
                 <td>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#delete">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal-${product.id}">
                         Delete
                     </button>
-                    <div class="modal fade" id="delete" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    <div class="modal fade" id="exampleModal-${product.id}" tabindex="-1" aria-labelledby="exampleModalLabel"
                          aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
