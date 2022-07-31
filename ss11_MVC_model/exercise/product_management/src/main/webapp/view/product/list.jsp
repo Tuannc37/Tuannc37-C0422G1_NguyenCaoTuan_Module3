@@ -18,7 +18,6 @@
         table {
             margin: 0 auto;
             width: 80%;
-            height: 200px;
             border: none;
             font-family: system-ui;
             text-align: center;
