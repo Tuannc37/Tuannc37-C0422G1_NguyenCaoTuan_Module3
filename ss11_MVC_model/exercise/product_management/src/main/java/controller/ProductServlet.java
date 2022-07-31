@@ -35,31 +35,9 @@ public class ProductServlet extends HttpServlet {
             case "view":
                 viewProduct(request, response);
                 break;
-            case "find":
-                searchByName(request, response);
-                break;
             default:
                 showListProduct(request,response);
                 break;
-        }
-    }
-
-    private void searchByName(HttpServletRequest request, HttpServletResponse response) {
-        String nameProduct = request.getParameter("name");
-        List<Product> productList = productService.findByName(nameProduct);
-        RequestDispatcher dispatcher;
-        if(productList == null){
-            dispatcher = request.getRequestDispatcher("view/error-404.jsp");
-        } else {
-            request.setAttribute("productList", productList);
-            dispatcher = request.getRequestDispatcher("view/product/list.jsp");
-        }
-        try {
-            dispatcher.forward(request, response);
-        } catch (ServletException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
         }
     }
 
