@@ -15,7 +15,7 @@ public class UserRepository implements IUserRepository {
     private static final String DELETE_USERS_SQL = "delete from users where id = ?;";
     private static final String UPDATE_USERS_SQL = "update users set name = ?,email= ?, country =? where id = ?;";
     private static final String SELECT_USER_BY_COUNTRY = "select * from users where country like ?;";
-    private static final String SORT_BY_NAME = "SELECT * FROM users ORDER BY users.name DESC;";
+    private static final String SORT_BY_NAME = "SELECT * FROM users ORDER BY users.name;";
     BaseRepository baseRepository = new BaseRepository();
 
     public UserRepository() {
