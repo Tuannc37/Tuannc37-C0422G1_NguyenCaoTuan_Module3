@@ -9,8 +9,6 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 @WebServlet(name = "UserServlet", urlPatterns = "/users")
@@ -82,7 +80,7 @@ public class UserServlet extends HttpServlet {
     private void findCountry(HttpServletRequest request, HttpServletResponse response) throws SQLException {
         String country = request.getParameter("country");
         List<User> listUser = userService.findCountry(country);
-        RequestDispatcher requestDispatcher= request.getRequestDispatcher("user/list.jsp");
+        RequestDispatcher requestDispatcher= request.getRequestDispatcher("view/user/list.jsp");
         request.setAttribute("listUser",listUser);
         try {
             requestDispatcher.forward(request,response);
@@ -93,7 +91,7 @@ public class UserServlet extends HttpServlet {
         }
     }
     private void sortByName(HttpServletRequest request, HttpServletResponse response) throws SQLException {
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("user/list.jsp");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("view/user/list.jsp");
         List<User> listUser = userService.sortByNameUser();
         request.setAttribute("listUser", listUser);
         try {
@@ -109,13 +107,13 @@ public class UserServlet extends HttpServlet {
             throws SQLException, IOException, ServletException {
         List<User> listUser = userService.selectAllUsers();
         request.setAttribute("listUser", listUser);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("user/list.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("view/user/list.jsp");
         dispatcher.forward(request, response);
     }
 
     private void showNewForm(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        RequestDispatcher dispatcher = request.getRequestDispatcher("user/create.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("view/user/create.jsp");
         dispatcher.forward(request, response);
     }
 
@@ -123,7 +121,7 @@ public class UserServlet extends HttpServlet {
             throws SQLException, ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
         User existingUser = userService.selectUser(id);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("user/edit.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("view/user/edit.jsp");
         request.setAttribute("user", existingUser);
         dispatcher.forward(request, response);
 
@@ -136,7 +134,7 @@ public class UserServlet extends HttpServlet {
         String country = request.getParameter("country");
         User newUser = new User(name, email, country);
         userService.insertUser(newUser);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("user/create.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("view/user/create.jsp");
         dispatcher.forward(request, response);
     }
 
@@ -149,7 +147,7 @@ public class UserServlet extends HttpServlet {
 
         User book = new User(id, name, email, country);
         userService.updateUser(book);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("user/edit.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("view/user/edit.jsp");
         dispatcher.forward(request, response);
     }
 
@@ -160,7 +158,7 @@ public class UserServlet extends HttpServlet {
 
         List<User> listUser = userService.selectAllUsers();
         request.setAttribute("listUser", listUser);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("user/list.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("view/user/list.jsp");
         dispatcher.forward(request, response);
     }
 }

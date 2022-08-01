@@ -4,7 +4,6 @@ import model.User;
 import repository.BaseRepository;
 import repository.IUserRepository;
 
-import javax.swing.*;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +14,7 @@ public class UserRepository implements IUserRepository {
     private static final String SELECT_ALL_USERS = "select * from users";
     private static final String DELETE_USERS_SQL = "delete from users where id = ?;";
     private static final String UPDATE_USERS_SQL = "update users set name = ?,email= ?, country =? where id = ?;";
-    private static final String SELECT_USER_BY_COUNTRY = "select * from users where country like ?";
+    private static final String SELECT_USER_BY_COUNTRY = "select * from users where country like ?;";
     private static final String SORT_BY_NAME = "SELECT * FROM users ORDER BY users.name DESC;";
     BaseRepository baseRepository = new BaseRepository();
 

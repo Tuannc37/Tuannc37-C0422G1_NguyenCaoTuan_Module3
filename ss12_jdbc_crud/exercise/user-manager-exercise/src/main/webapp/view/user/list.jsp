@@ -17,9 +17,9 @@
 <center>
     <h1>User Management</h1>
     <div class = header-panel>
-        <form action="/users?action=find" method="post">
-            <input type="text" name="name" placeholder="Nhập tên quốc gia cần tìm">
-            <button class="bg-primary text-white" type="submit">Submit</button>
+        <form action="/users" method="post">
+            <input type="text" name="country" placeholder="Nhập tên quốc gia cần tìm">
+            <button name="action" value="find" class="bg-primary text-white" type="submit">Submit</button>
         </form>
         <p><a class="bg-primary text-white" href="/users?action=create&id=${user.id}">Add New User</a></p>
         <p><a class="bg-primary text-white" href="/users?action=sort&id=${user.id}">Sort ByName</a></p>
