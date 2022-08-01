@@ -153,6 +153,7 @@ public class ProductServlet extends HttpServlet {
         productService.update(product.getId(),product);
         RequestDispatcher dispatcher = request.getRequestDispatcher("view/product/edit.jsp");
         request.setAttribute("message", "Update thanh cong");
+        showUpdateProduct(request,response);
         try {
             dispatcher.forward(request, response);
         } catch (ServletException e) {
@@ -173,6 +174,7 @@ public class ProductServlet extends HttpServlet {
         productService.create(product);
         RequestDispatcher dispatcher = request.getRequestDispatcher("view/product/create.jsp");
         request.setAttribute("message", "Them moi thanh cong");
+        showCreateProduct(request,response);
         try {
             dispatcher.forward(request, response);
         } catch (ServletException e) {

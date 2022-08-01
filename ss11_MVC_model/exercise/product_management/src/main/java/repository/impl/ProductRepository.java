@@ -32,6 +32,7 @@ public class ProductRepository implements IProductRepository {
     public void update(int id, Product product) {
         for (Product p:productList){
             if(product.getId() == p.getId()){
+                p.setId(product.getId());
                 p.setNameProduct(product.getNameProduct());
                 p.setPrice(product.getPrice());
                 p.setDescription(product.getDescription());
