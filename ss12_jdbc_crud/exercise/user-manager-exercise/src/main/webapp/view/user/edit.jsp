@@ -39,27 +39,18 @@
             </c:if>
             <tr>
                 <th>User Name:</th>
-                <td>
-                    <input type="text" name="name" size="45" value="<c:out value='${user.name}' />"/>
-                </td>
+                <td><input type="text" name="name" size="45" value="<c:out value='${user.name}' />"/></td>
             </tr>
             <tr>
                 <th>User Email:</th>
-                <td>
-                    <input type="text" name="email" size="45" value="<c:out value='${user.email}' />"/>
-                </td>
+                <td><input type="text" name="email" size="45" value="<c:out value='${user.email}' />"/></td>
             </tr>
             <tr>
                 <th>Country:</th>
-                <td>
-                    <input type="text" name="country" size="15"
-                           value="<c:out value='${user.country}' />"/>
-                </td>
+                <td><input type="text" name="country" size="15" value="<c:out value='${user.country}' />"/></td>
             </tr>
             <tr>
-                <td colspan="2" align="center">
-                    <input type="submit" value="Save"/>
-                </td>
+                <td colspan="2" align="center"><input type="submit" value="Save"/></td>
             </tr>
         </table>
     </form>

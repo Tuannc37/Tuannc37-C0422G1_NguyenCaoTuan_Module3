@@ -34,27 +34,17 @@
             </caption>
             <tr>
                 <th>User Name:</th>
-                <td>
-                    <input required type="text" name="name" id="name" size="45"/>
-                </td>
+                <td><input required type="text" name="name" id="name" size="45"/></td>
             </tr>
             <tr>
                 <th>User Email:</th>
-                <td>
-                    <input required type="text" name="email" id="email" size="45"/>
-                </td>
+                <td><input required type="text" name="email" id="email" size="45"/></td>
             </tr>
             <tr>
                 <th>Country:</th>
-                <td>
-                    <input required type="text" name="country" id="country" size="15"/>
-                </td>
+                <td><input required type="text" name="country" id="country" size="15"/></td>
             </tr>
-            <tr>
-                <td colspan="2" align="center">
-                    <input type="submit" value="Save"/>
-                </td>
-            </tr>
+            <tr><td colspan="2" align="center"><input type="submit" value="Save"/></td></tr>
         </table>
     </form>
 </div>
