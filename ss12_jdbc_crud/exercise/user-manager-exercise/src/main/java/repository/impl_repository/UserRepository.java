@@ -16,6 +16,7 @@ public class UserRepository implements IUserRepository {
     private static final String UPDATE_USERS_SQL = "UPDATE users set name = ?,email= ?, country =? where id = ?;";
     private static final String SELECT_USER_BY_COUNTRY = "SELECT * FROM users WHERE country like ?;";
     private static final String SORT_BY_NAME = "SELECT * FROM users ORDER BY users.name;";
+
     BaseRepository baseRepository = new BaseRepository();
 
     public UserRepository() {
@@ -113,13 +114,14 @@ public class UserRepository implements IUserRepository {
         Connection connection = baseRepository.getConnection();
         try{
             PreparedStatement preparedStatement = connection.prepareStatement(SELECT_USER_BY_COUNTRY);
-            preparedStatement.setString(1, country);
+            preparedStatement.setString(1, "%"+country+"%");
             System.out.println(preparedStatement);
             ResultSet rs = preparedStatement.executeQuery();
             while(rs.next()){
                 int id = rs.getInt("id");
                 String name = rs.getString("name");
                 String email = rs.getString("email");
+                country = rs.getString("country");
                 User user = new User(id, name, email,country);
                 userList.add(user);
             }
