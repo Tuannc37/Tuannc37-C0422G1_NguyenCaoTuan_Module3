@@ -29,7 +29,7 @@
     <div class = header-panel>
         <form action="/users?action=find" method="post">
             <input type="text" name="country" placeholder="Nhập tên quốc gia cần tìm">
-            <button name="action"  type="submit">Submit</button>
+            <button name="action" type="submit">Submit</button>
         </form>
         <p><a href="/users?action=create&id=${user.id}">Add New User</a></p>
         <p><a href="/users?action=sort&id=${user.id}">Sort ByName</a></p>

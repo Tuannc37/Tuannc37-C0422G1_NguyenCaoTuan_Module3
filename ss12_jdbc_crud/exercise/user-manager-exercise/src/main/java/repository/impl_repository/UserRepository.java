@@ -111,7 +111,6 @@ public class UserRepository implements IUserRepository {
     public List<User> findCountry(String country) throws SQLException {
         List<User> userList  = new ArrayList<>();
         Connection connection = baseRepository.getConnection();
-
         try{
             PreparedStatement preparedStatement = connection.prepareStatement(SELECT_USER_BY_COUNTRY);
             preparedStatement.setString(1, country);
