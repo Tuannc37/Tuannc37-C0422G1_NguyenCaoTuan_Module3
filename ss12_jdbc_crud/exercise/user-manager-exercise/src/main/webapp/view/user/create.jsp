@@ -4,6 +4,20 @@
 <html>
 <head>
     <title>User Management Application</title>
+    <style>
+        table {
+            width: 40%;
+            border: snow;
+            text-align: center;
+            background-color: #b7dfef;
+        }
+        input {
+            padding: 5px;
+            border-radius: 5px;
+            background-color: #f1e5db;
+            border: none;
+        }
+    </style>
 </head>
 <body>
 <center>

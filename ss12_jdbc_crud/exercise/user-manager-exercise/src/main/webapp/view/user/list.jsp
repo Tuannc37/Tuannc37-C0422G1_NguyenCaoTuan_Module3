@@ -16,6 +16,11 @@
         input[type="text"], .header-panel button  {
             border-radius: 5px;
         }
+        a.bg-primary.text-white {
+            text-decoration: none;
+            padding: 9px 23px;
+            border-radius: 8px;
+        }
     </style>
 </head>
 <body>
@@ -46,7 +51,7 @@
                 <td><c:out value="${user.name}"/></td>
                 <td><c:out value="${user.email}"/></td>
                 <td><c:out value="${user.country}"/></td>
-                <td> <a href="/users?action=edit&id=${user.id}">Edit</a></td>
+                <td> <a class="bg-primary text-white" href="/users?action=edit&id=${user.id}">Edit</a></td>
                 <td>
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal-${user.id}">
                         Delete
