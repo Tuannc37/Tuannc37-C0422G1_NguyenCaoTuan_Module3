@@ -35,6 +35,9 @@ public class UserServlet extends HttpServlet {
                 case "edit":
                     updateUser(request, response);
                     break;
+                case "delete":
+                    deleteUser(request, response);
+                    break;
                 case "find":
                     findCountry(request,response);
                     break;
@@ -59,9 +62,6 @@ public class UserServlet extends HttpServlet {
                     break;
                 case "edit":
                     showEditForm(request, response);
-                    break;
-                case "delete":
-                    deleteUser(request, response);
                     break;
                 case "sort":
                     sortByName(request, response);
