@@ -35,6 +35,9 @@ public class UserServlet extends HttpServlet {
                 case "edit":
                     updateUser(request, response);
                     break;
+                case "delete":
+                    deleteUser(request, response);
+                    break;
                 case "find":
                     findCountry(request,response);
                     break;
@@ -60,9 +63,6 @@ public class UserServlet extends HttpServlet {
                     break;
                 case "edit":
                     showEditForm(request, response);
-                    break;
-                case "delete":
-                    deleteUser(request, response);
                     break;
                 case "sort":
                     sortByName(request, response);
@@ -154,8 +154,12 @@ public class UserServlet extends HttpServlet {
     private void deleteUser(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException, ServletException {
         int id = Integer.parseInt(request.getParameter("id"));
-        userService.deleteUser(id);
-
+        boolean flag =userService.deleteUser(id);
+        String mess ="Xoa khong thanh cong";
+        if (flag){
+            mess ="Xoa thanh cong";
+        }
+        request.setAttribute("mess", mess);
         List<User> listUser = userService.selectAllUsers();
         request.setAttribute("listUser", listUser);
         RequestDispatcher dispatcher = request.getRequestDispatcher("view/user/list.jsp");
