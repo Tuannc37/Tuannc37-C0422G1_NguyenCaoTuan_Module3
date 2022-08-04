@@ -54,19 +54,19 @@
     <div align="center">
         <table class="table table-info table-striped">
             <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Area</th>
-                <th>Cost</th>
-                <th>MaxPeople</th>
-                <th>rentTypeId</th>
-                <th>TypeId</th>
-                <th>StandardRoom</th>
-                <th>Description</th>
-                <th>Area</th>
-                <th>NumberOfFloor</th>
-                <th>Update</th>
-                <th>Delete</th>
+                <th>ID Dịch vụ</th>
+                <th>Tên dịch vụ</th>
+                <th>Diện tích phòng</th>
+                <th>Giá phòng</th>
+                <th>Số người tối đa</th>
+                <th>Kiểu thuê</th>
+                <th>Loại dịch vụ</th>
+                <th>Tiêu chuẩn phòng</th>
+                <th>Mô tả khác</th>
+                <th>Diện tích hồ bơi</th>
+                <th>Số tầng</th>
+                <th>Sửa</th>
+                <th>Xóa</th>
             </tr>
             <c:forEach var="user" items="${listUser}">
                 <tr>

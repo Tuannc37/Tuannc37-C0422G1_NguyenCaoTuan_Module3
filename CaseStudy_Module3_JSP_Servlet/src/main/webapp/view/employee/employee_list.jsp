@@ -54,21 +54,20 @@
     <div align="center">
         <table class="table table-info table-striped">
             <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Birth</th>
-                <th>IdCard</th>
-                <th>Salary</th>
-                <th>Phone</th>
+                <th>ID nhân viên</th>
+                <th>Tên nhân viên</th>
+                <th>Ngày sinh</th>
+                <th>Số CMND</th>
+                <th>Mức lương</th>
+                <th>Số điện thoại</th>
                 <th>Email</th>
-                <th>Address</th>
-                <th>PositionId</th>
-                <th>DegreeId</th>
-                <th>DivisionId</th>
+                <th>Địa chỉ</th>
+                <th>Vị trí</th>
+                <th>Trình độ</th>
+                <th>Bộ phận</th>
                 <th>Username</th>
-                <th>Update</th>
-                <th>Delete</th>
-
+                <th>Sửa</th>
+                <th>Xóa</th>
             </tr>
             <c:forEach var="user" items="${listUser}">
                 <tr>
