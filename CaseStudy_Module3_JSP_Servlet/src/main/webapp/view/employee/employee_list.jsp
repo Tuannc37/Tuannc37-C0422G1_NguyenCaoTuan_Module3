@@ -7,6 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
+    <style>
+        a.add {
+            padding: 5px 5px;
+            background-color: #b7e7e2;
+            text-decoration: none;
+            color: black;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
     <div class="container-fluid menu">
@@ -48,11 +57,11 @@
     <center>
         <h2>Employee Management</h2>
         <div class = header-panel>
-            <p><a href="employee_create.jsp">Add New User</a></p>
+            <p><a class = "add" href="employee_create.jsp">Add New User</a></p>
         </div>
     </center>
     <div align="center">
-        <table class="table table-info table-striped">
+        <table class="table table-info table-striped container">
             <tr>
                 <th>ID nhân viên</th>
                 <th>Tên nhân viên</th>
