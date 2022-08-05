@@ -5,21 +5,10 @@
 <head>
     <title>Furama Resort</title>
     <style>
-        a.add {
-            padding: 5px 5px;
-            background-color: #b7e7e2;
-            text-decoration: none;
-            color: black;
-            border-radius: 5px;
-        }
-        a.bg-primary.text-white {
-            padding: 9px 13px;
-            border-radius: 5px;
-            text-decoration: none;
-            display: block;
+        .col-md-8.bg-light.p-3 {
+            width: 90%;
         }
     </style>
-    <link rel="icon" href="img/logo.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
 
@@ -90,7 +79,7 @@
             <td>dsdsds</td>
             <td>dsdsdsds</td>
             <td>
-                <button type="button" class="btn btn-primary bg-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <button type="button" class="btn btn-primary bg-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                +
                 </button>
                 <button type="button" class="btn btn-primary bg-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -107,7 +96,7 @@
             <td>Nam</td>
             <td>121212113</td>
             <td>
-                <button type="button" class="btn btn-primary bg-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <button type="button" class="btn btn-primary bg-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                     +
                 </button>
                 <button type="button" class="btn btn-primary bg-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -124,7 +113,7 @@
             <td>Nam</td>
             <td>121212113</td>
             <td>
-                <button type="button" class="btn btn-primary bg-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <button type="button" class="btn btn-primary bg-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                     +
                 </button>
                 <button type="button" class="btn btn-primary bg-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -143,7 +132,7 @@
                 <td><c:out value=""/></td>
                 <td><c:out value=""/></td>
                 <td>
-                    <button type="button" class="btn btn-primary bg-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <button type="button" class="btn btn-primary bg-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                         +
                     </button>
                     <button type="button" class="btn btn-primary bg-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -173,6 +162,94 @@
             </div>
         </div>
     </form>
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Create Contract</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-8 bg-light p-3" style="margin: auto">
+                            <form action="" method="post">
+                                <div class="mb-2 row">
+                                    <label for="start-date" class="col-sm-4 col-form-label">Ngầy bắt đầu</label>
+                                    <div class="col-sm-8">
+                                        <input type="date" class="form-control" id="start-date">
+                                    </div>
+                                </div>
+                                <div class="mb-2 row">
+                                    <label for="end-date" class="col-sm-4 col-form-label">Ngày kết thúc</label>
+                                    <div class="col-sm-8">
+                                        <input type="date" class="form-control" id="end-date">
+                                    </div>
+                                </div>
+                                <div class="mb-2 row">
+                                    <label for="deposit" class="col-sm-4 col-form-label">Tiền gửi</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="deposit" name="deposit">
+                                    </div>
+                                </div>
+                                <div class="mb-2 row">
+                                    <label for="total-money" class="col-sm-4 col-form-label">Tổng tiền</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" readonly class="form-control" id="total-money" name="total-money">
+                                    </div>
+                                </div>
+
+                                <div class="mb-2 row">
+                                    <label class="col-sm-4 col-form-label">Khách hàng thuê dịch vụ</label>
+                                    <div class="col-sm-8">
+                                        <select name=""  class="form-select">
+                                            <option value="diamond" >Diamond</option>
+                                            <option value="gold" >Gold</option>
+                                            <option value="silver" >Silver</option>
+                                            <option value="member" >Member</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="mb-2 row">
+                                    <label class="col-sm-4 col-form-label">Dịch vụ</label>
+                                    <div class="col-sm-8">
+                                        <select name=""  class="form-select">
+                                            <option value="Villa" >Villa</option>
+                                            <option value="House" >House</option>
+                                            <option value="Room" >Room</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="mb-2 row">
+                                    <label  class="col-sm-4 col-form-label">Dịch vụ đi kèm</label>
+                                    <div class="col-sm-8">
+                                        <button type="button" class="btn btn-primary bg-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                            +
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-danger" type="button" onclick="">HỦY BỎ</button>
+                    <button class="btn btn-success" type="submit">TẠO HỢP ĐỒNG</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
     <script>
         function showInfoDelete(id,name) {
             document.getElementById("deleteId").value= id;

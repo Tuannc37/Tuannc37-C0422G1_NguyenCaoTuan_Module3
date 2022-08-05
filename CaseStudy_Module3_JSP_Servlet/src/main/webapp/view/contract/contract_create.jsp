@@ -47,7 +47,6 @@
     </header>
 </div>
 <div>
-
     <div class="col-md-5 bg-light mt-5 p-3" style="margin: auto">
         <h3>Create Contract</h3>
         <form action="" method="post">
