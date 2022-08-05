@@ -24,16 +24,16 @@
                     <div class="col-md-7">
                         <ul class="navbar-nav mr-auto w-100" id="navbarSupportedContent">
                             <li class="nav-item active">
-                                <a class="nav-link" href="">Home<span class="sr-only">(current)</span></a>
+                                <a class="nav-link" href="">Home<span class="view/index.jsp">(current)</span></a>
                             </li>
                             <li class="nav-item active">
-                                <a class="nav-link" href="">Employee<span class="sr-only">(current)</span></a>
+                                <a class="nav-link" href="view/employee/employee_list.jsp">Employee<span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item active">
-                                <a class="nav-link" href="">Customer</a>
+                                <a class="nav-link" href="view/customer/customer_list.jsp">Customer</a>
                             </li>
                             <li class="nav-item active">
-                                <a class="nav-link" href="">Service<span class="sr-only">(current)</span></a>
+                                <a class="nav-link" href="view/facility/facility_list.jsp">Service<span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item active">
                                 <a class="nav-link" href="#">Contract<span class="sr-only">(current)</span></a>

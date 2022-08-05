@@ -48,7 +48,7 @@
     <center>
         <h2>Customer Management</h2>
         <div class = header-panel>
-            <p><a href="/users?action=create&id=${user.id}">Add New User</a></p>
+            <p><a href="customer_create.jsp">Add New User</a></p>
         </div>
     </center>
     <div align="center">
@@ -78,7 +78,7 @@
                     <td><c:out value=""/></td>
                     <td><c:out value=""/></td>
                     <td><c:out value=""/></td>
-                    <td> <a class="bg-primary text-white" href="/users?action=edit&id=${user.id}">Edit</a></td>
+                    <td> <a class="bg-primary text-white" href="customer_edit.jsp">Edit</a></td>
                     <td>
                         <button onclick="showInfoDelete('','')" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                             Delete

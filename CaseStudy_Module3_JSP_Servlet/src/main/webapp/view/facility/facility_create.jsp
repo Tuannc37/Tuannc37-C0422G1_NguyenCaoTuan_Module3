@@ -7,121 +7,143 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="container-fluid menu">
-        <header>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <div class="collapse navbar-collapse row w-100">
-                    <div class="col-md-2">
-                        <img src="../../image/Logo-FURAMA-RESORT.jpg" alt="" height="100px">
-                    </div>
-                    <div class="col-md-7">
-                        <ul class="navbar-nav mr-auto w-100" id="navbarSupportedContent">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="/index.jsp">Home<span class="sr-only">(current)</span></a>
-                            </li>
-                            <li class="nav-item active">
-                                <a class="nav-link" href="/index.jsp">Employee<span class="sr-only">(current)</span></a>
-                            </li>
-                            <li class="nav-item active">
-                                <a class="nav-link" href="/index.jsp">Customer</a>
-                            </li>
-                            <li class="nav-item active">
-                                <a class="nav-link" href="/facility">Service<span class="sr-only">(current)</span></a>
-                            </li>
-                            <li class="nav-item active">
-                                <a class="nav-link" href="#">Contract<span class="sr-only">(current)</span></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-md-3">
-                        <form class="form-inline my-2 my-lg-0 row">
-                            <div class = "col-md-7"><input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"></div>
-                            <div class = "col-md-5"><button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button></div>
-                        </form>
-                    </div>
+<div class="container-fluid menu">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="collapse navbar-collapse row w-100">
+                <div class="col-md-2">
+                    <img src="../../image/Logo-FURAMA-RESORT.jpg" alt="" height="100px">
                 </div>
-            </nav>
-        </header>
-    </div>
-    <div class="create-form">
-        <div class="container w-50">
-            <form action="/facility?action=create" method="post">
-                <h3 style="text-align: center; color: #f1b0b7">Create Facility Form</h3>
-                <div class="form-group">
-                    <label for="exampleFormControlInput1">Service Name:</label>
-                    <input type="text" name="serviceName" value="" class="form-control"
-                           id="exampleFormControlInput1"
-                           placeholder="DV-XXXX (X = 0-9)" required>
-                    <p style="color: red"></p>
+                <div class="col-md-7">
+                    <ul class="navbar-nav mr-auto w-100" id="navbarSupportedContent">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/index.jsp">Home<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/index.jsp">Employee<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/index.jsp">Customer</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/facility">Service<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Contract<span class="sr-only">(current)</span></a>
+                        </li>
+                    </ul>
                 </div>
-                <div class="form-group">
-                    <label for="exampleFormControlInput2">Service Area Name:</label>
-                    <input type="number" name="serviceArea" class="form-control" value=""
-                           id="exampleFormControlInput2"
-                           placeholder="Số dương" required>
-                    <p style="color: red"></p>
+                <div class="col-md-3">
+                    <form class="form-inline my-2 my-lg-0 row">
+                        <div class = "col-md-7"><input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"></div>
+                        <div class = "col-md-5"><button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button></div>
+                    </form>
                 </div>
-                <div class="form-group">
-                    <label for="exampleFormControlInput3">Service Cost:</label>
-                    <input type="number" name="serviceCost" class="form-control" value=""
-                           placeholder="Số dương" id="exampleFormControlInput3" required>
-                </div>
-                <div class="form-group">
-                    <label for="exampleFormControlInput4">Max People:</label>
-                    <input type="number" name="serviceMaxPeople" class="form-control" value=""
-                           id="exampleFormControlInput4"
-                           placeholder="Số dương" required>
-                    <p style="color: red"></p>
-                </div>
-                <div class="form-group">
-                    <label for="exampleFormControlSelect1">Choose Rent Type:</label>
-                    <select class="form-control" name="rentTypeId" id="exampleFormControlSelect1">
-<%--                        <c:forEach items="${rentTypeList}" var="rType">--%>
-<%--                            <option value="${rType.rentTypeId}">${rType.rentTypeName}</option>--%>
-<%--                        </c:forEach>--%>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="exampleFormControlSelect2">Choose Service Type:</label>
-                    <select class="form-control" name="serviceTypeId" id="exampleFormControlSelect2">
-<%--                        <c:forEach items="${serviceTypeList}" var="sType">--%>
-<%--                            <option value="${sType.serviceTypeId}">${sType.serviceTypeName}</option>--%>
-<%--                        </c:forEach>--%>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="exampleFormControlInput5">Standard Room:</label>
-                    <input type="text" name="standardRoom" class="form-control" value=""
-                           id="exampleFormControlInput5" required>
-                    <p style="color: red"></p>
-                </div>
-                <div class="form-group">
-                    <label for="exampleFormControlInput6">Description:</label>
-                    <input type="text" name="description" class="form-control" value=""
-                           id="exampleFormControlInput6" required>
-                    <p style="color: red"></p>
-                </div>
-                <div class="form-group">
-                    <label for="exampleFormControlInput7">Pool Area:</label>
-                    <input type="number" name="poolArea" class="form-control" value=""
-                           placeholder="Số dương" id="exampleFormControlInput7" required>
-                    <p style="color: red"></p>
-                </div>
-                <div class="form-group">
-                    <label for="exampleFormControlInput8">Number Of Floor:</label>
-                    <input type="number" name="numberOfFloor" class="form-control" value=""
-                           placeholder="Số dương" id="exampleFormControlInput8" required>
-                    <p style="color: red"></p>
-                </div>
-                <div class="w-100" style="display:  flex">
-                    <button type="submit" class="btn btn-success w-50" style="alignment: center">Lưu</button>
-                    <a href="/facility" class="btn btn-secondary w-50">Quay lại</a>
-                </div>
-                <div class="w-100">
-                    <p style="color: forestgreen; alignment: center!important;"></p>
-                </div>
-            </form>
+            </div>
+        </nav>
+    </header>
+</div>
+<div class="container w-50 mt-2 p-2" style="border: 1px solid grey; border-radius: 15px">
+    <h3 align="center">THÊM MỚI DỊCH VỤ</h3>
+    <form class="row g-3 text-center" action="" method="post">
+        <div class="col-md-12">
+            <label class="form-label">Loại dịch vụ</label>
+            <select name=""  class="form-select" onchange="showServiceInput(this)">
+                <option value="None" >Chọn loại dịch vụ</option>
+                <option value="Villa" >Villa</option>
+                <option value="House" >House</option>
+                <option value="Room" >Room</option>
+            </select>
         </div>
-    </div>
+
+        <%--Dịch vụ mặc định--%>
+        <div class="col-md-12">
+            <label for="name" class="form-label">Tên dịch vụ</label>
+            <input type="text" class="form-control" id="name" name="name">
+        </div>
+        <div class="col-md-12">
+            <label for="area" class="form-label">Diện tích sử dụng</label>
+            <input type="text" class="form-control" id="area" name="area">
+        </div>
+        <div class="col-md-12">
+            <label for="cost" class="form-label">Chi phí thuê</label>
+            <input type="text" class="form-control" id="cost"  name="cost" >
+        </div>
+        <div class="col-md-12">
+            <label for="inputAddress2" class="form-label">Số lượng người tối đa </label>
+            <input type="text" class="form-control" id="inputAddress2"  name="max_people" >
+        </div>
+        <div class="col-md-12">
+            <label for="inputCity" class="form-label">Kiểu thuê</label>
+            <input type="text" class="form-control" id="inputCity" name="rent_type_id">
+        </div>
+
+        <%--Villa và House sẽ có chung--%>
+        <div class="col-md-12" id="dv1" style="display: none">
+            <label for="standard_room" class="form-label">Tiêu chuẩn phòng</label>
+            <input type="text" class="form-control" id="standard_room" name="standard_room">
+        </div>
+        <div class="col-md-12" id="dv2" style="display: none">
+            <label for="description_other_convenience" class="form-label">Mô tả tiện nghi khác</label>
+            <input type="text" class="form-control" id="description_other_convenience" name="description_other_convenience">
+        </div>
+        <div class="col-md-12" id="dv3" style="display: none">
+            <label for="number_of_floors" class="form-label">Số tầng</label>
+            <input type="text" class="form-control" id="number_of_floors" name="number_of_floors">
+        </div>
+
+        <%--Riêng Villa sẽ có thêm--%>
+        <div class="col-md-12" id="dv4" style="display: none">
+            <label for="pool_area" class="form-label">Diện tích hồ bơi</label>
+            <input type="text" class="form-control" id="pool_area" name="pool_area">
+        </div>
+
+        <%--Riêng Room sẽ có thêm--%>
+        <div class="col-md-12" id="dv5" style="display: none">
+            <label for="facility_free" class="form-label">Dịch vụ miễn phí đi kèm</label>
+            <input type="text" class="form-control" id="facility_free" name="facility_free">
+        </div>
+
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary">Thêm mới</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    function showServiceInput(value) {
+        const v = value.value;
+        switch (v) {
+            case 'None':
+                document.getElementById("dv1").style.display="none";
+                document.getElementById("dv2").style.display="none";
+                document.getElementById("dv3").style.display="none";
+                document.getElementById("dv4").style.display="none";
+                document.getElementById("dv5").style.display="none";
+                break;
+            case "Villa":
+                document.getElementById("dv1").style.display="block";
+                document.getElementById("dv2").style.display="block";
+                document.getElementById("dv3").style.display="block";
+                document.getElementById("dv4").style.display="block";
+                document.getElementById("dv5").style.display="none";
+                break;
+            case "House":
+                document.getElementById("dv1").style.display="block";
+                document.getElementById("dv2").style.display="block";
+                document.getElementById("dv3").style.display="block";
+                document.getElementById("dv4").style.display="none";
+                document.getElementById("dv5").style.display="none";
+                break;
+            case "Room":
+                document.getElementById("dv1").style.display="none";
+                document.getElementById("dv2").style.display="none";
+                document.getElementById("dv3").style.display="none";
+                document.getElementById("dv4").style.display="none";
+                document.getElementById("dv5").style.display="block";
+                break;
+        }
+    }
+</script>
 </body>
 </html>

@@ -48,7 +48,7 @@
     <center>
         <h2>Facility Management</h2>
         <div class = header-panel>
-            <p><a href="/users?action=create&id=${user.id}">Add New User</a></p>
+            <p><a href="facility_create.jsp">Add New User</a></p>
         </div>
     </center>
     <div align="center">
@@ -68,6 +68,55 @@
                 <th>Sửa</th>
                 <th>Xóa</th>
             </tr>
+
+            <tr>
+                <td class ="">1</td>
+                <td>Xông hơi</td>
+                <td>30</td>
+                <td>2000</td>
+                <td>4000</td>
+                <td>2</td>
+                <td>Không có</td>
+                <td>Vip</td>
+                <td>không có</td>
+                <td>40</td>
+                <td>12</td>
+                <td><a class="bg-primary text-white" href="facility_edit.jsp">Edit</a></td>
+                <td>Xóa</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Xông hơi</td>
+                <td>30</td>
+                <td>2000</td>
+                <td>4000</td>
+                <td>2</td>
+                <td>Không có</td>
+                <td>Vip</td>
+                <td>không có</td>
+                <td>40</td>
+                <td>12</td>
+                <td><a class="bg-primary text-white" href="facility_edit.jsp">Edit</a></td>
+                <td>Xóa</td>
+            </tr>
+
+            <tr>
+                <td>3</td>
+                <td>Xông hơi</td>
+                <td>30</td>
+                <td>2000</td>
+                <td>4000</td>
+                <td>2</td>
+                <td>Không có</td>
+                <td>Vip</td>
+                <td>không có</td>
+                <td>40</td>
+                <td>12</td>
+                <td><a class="bg-primary text-white" href="facility_edit.jsp">Edit</a></td>
+                <td>Xóa</td>
+            </tr>
+
+
             <c:forEach var="user" items="${listUser}">
                 <tr>
                     <td><c:out value=""/></td>
@@ -81,7 +130,7 @@
                     <td><c:out value=""/></td>
                     <td><c:out value=""/></td>
                     <td><c:out value=""/></td>
-                    <td> <a class="bg-primary text-white" href="/users?action=edit&id=${user.id}">Edit</a></td>
+                    <td> <a class="bg-primary text-white" href="facility_edit.jsp">Edit</a></td>
                     <td>
                         <button onclick="showInfoDelete('${user.id}','${user.name}')" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                             Delete
@@ -117,5 +166,6 @@
             }
         </script>
     </div>
+
 </body>
 </html>
