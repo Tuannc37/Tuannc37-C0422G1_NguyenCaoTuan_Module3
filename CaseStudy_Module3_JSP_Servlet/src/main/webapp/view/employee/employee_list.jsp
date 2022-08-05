@@ -180,6 +180,7 @@
                 </div>
             </div>
         </form>
+
         <script>
             function showInfoDelete(id,name) {
                 document.getElementById("deleteId").value= id;
