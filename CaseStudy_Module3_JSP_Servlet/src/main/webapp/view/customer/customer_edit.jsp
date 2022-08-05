@@ -67,10 +67,14 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlSelect1">Loại khách hàng:</label>
-                    <select class="form-control" name="customerTypeId" id="exampleFormControlSelect1">
-                        <c:forEach items="${typeList}" var="type">
-                            <option value="${type.customerTypeId}">${type.customerTypeName}</option>
-                        </c:forEach>
+                    <select class="form-select" name="customerTypeId" id="exampleFormControlSelect1">
+                        <option value="diamond" >Diamond</option>
+                        <option value="gold" >Gold</option>
+                        <option value="silver" >Silver</option>
+                        <option value="member" >Member</option>
+<%--                        <c:forEach items="${typeList}" var="type">--%>
+<%--                            <option value="${type.customerTypeId}">${type.customerTypeName}</option>--%>
+<%--                        </c:forEach>--%>
                     </select>
                 </div>
                 <div class="form-group">

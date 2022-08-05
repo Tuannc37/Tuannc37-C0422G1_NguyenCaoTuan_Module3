@@ -80,9 +80,64 @@
                 <th>Vị trí</th>
                 <th>Trình độ</th>
                 <th>Bộ phận</th>
-                <th>Username</th>
+                <th>Tên tài khoản</th>
                 <th>Sửa</th>
                 <th>Xóa</th>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td>21</td>
+                <td>Vip</td>
+                <td>Tuấn</td>
+                <td>10/04/1994</td>
+                <td>Nam</td>
+                <td>121212113</td>
+                <td>03442334</td>
+                <td>dfdfdfdf@gmail.com</td>
+                <td>Nghệ An</td>
+                <td>Nhân Viên</td>
+                <td>dsdsds</td>
+                <td><a class="bg-primary text-white" href="employee_edit.jsp">Edit</a></td>
+                <td><button type="button" class="btn btn-primary bg-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Xóa
+                </button></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>21</td>
+                <td>Vip</td>
+                <td>Tuấn</td>
+                <td>10/04/1994</td>
+                <td>Nam</td>
+                <td>121212113</td>
+                <td>03442334</td>
+                <td>dfdfdfdf@gmail.com</td>
+                <td>Nghệ An</td>
+                <td>Nhân Viên</td>
+                <td>dsdsds</td>
+                <td><a class="bg-primary text-white" href="employee_edit.jsp">Edit</a></td>
+                <td><button type="button" class="btn btn-primary bg-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Xóa
+                </button></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>21</td>
+                <td>Vip</td>
+                <td>Tuấn</td>
+                <td>10/04/1994</td>
+                <td>Nam</td>
+                <td>121212113</td>
+                <td>03442334</td>
+                <td>dfdfdfdf@gmail.com</td>
+                <td>Nghệ An</td>
+                <td>Nhân Viên</td>
+                <td>dsdsds</td>
+                <td><a class="bg-primary text-white" href="employee_edit.jsp">Edit</a></td>
+                <td><button type="button" class="btn btn-primary bg-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Xóa
+                </button></td>
             </tr>
             <c:forEach var="user" items="${listUser}">
                 <tr>

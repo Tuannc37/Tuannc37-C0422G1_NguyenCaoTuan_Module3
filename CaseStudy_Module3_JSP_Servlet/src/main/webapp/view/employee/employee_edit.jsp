@@ -108,26 +108,40 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlSelect1">Vị trí</label>
-                    <select class="form-control" name="positionId" id="exampleFormControlSelect1">
-                        <c:forEach items="${listPosition}" var="position">
-                            <option value="${position.positionId}">${position.positionName}</option>
-                        </c:forEach>
+                    <select class="form-select" name="positionId" id="exampleFormControlSelect1">
+                        <option value="receptionist" >Lễ tân</option>
+                        <option value="waiter" >Phục vụ</option>
+                        <option value="specialist" >Chuyên viên</option>
+                        <option value="supervisor" >Gián sát</option>
+                        <option value="manager" >Quản lý</option>
+                        <option value="director" >Giám đốc</option>
+                        <%--                        <c:forEach items="${listPosition}" var="position">--%>
+                        <%--                            <option value="${position.positionId}">${position.positionName}</option>--%>
+                        <%--                        </c:forEach>--%>
                     </select>
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlSelect2">Trình độ</label>
-                    <select class="form-control" name="educationDegreeId" id="exampleFormControlSelect2">
-                        <c:forEach items="${listDegree}" var="degree">
-                            <option value="${degree.educationDegreeId}">${degree.educationDegreeName}</option>
-                        </c:forEach>
+                    <select class="form-select" name="educationDegreeId" id="exampleFormControlSelect2">
+                        <option value="intermediate" >Trung Cấp</option>
+                        <option value="college" >Cao Đẳng</option>
+                        <option value="university" >Đại Học</option>
+                        <option value="afterUniversity" >Sau Đại Học</option>
+                        <%--                        <c:forEach items="${listDegree}" var="degree">--%>
+                        <%--                            <option value="${degree.educationDegreeId}">${degree.educationDegreeName}</option>--%>
+                        <%--                        </c:forEach>--%>
                     </select>
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlSelect3">Bộ phận</label>
-                    <select class="form-control" name="divisionId" id="exampleFormControlSelect3">
-                        <c:forEach items="${listDivision}" var="division">
-                            <option value="${division.divisionId}">${division.divisionName}</option>
-                        </c:forEach>
+                    <select class="form-select" name="divisionId" id="exampleFormControlSelect3">
+                        <option value="sales" >Sale – Marketing</option>
+                        <option value="administration" >Hành Chính</option>
+                        <option value="service" >Phục vụ</option>
+                        <option value="management" > Quản lý</option>
+                        <%--                        <c:forEach items="${listDivision}" var="division">--%>
+                        <%--                            <option value="${division.divisionId}">${division.divisionName}</option>--%>
+                        <%--                        </c:forEach>--%>
                     </select>
                 </div>
                 <div class="w-100 text-center">
