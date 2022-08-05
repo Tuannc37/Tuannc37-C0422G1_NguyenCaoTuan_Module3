@@ -15,12 +15,18 @@
             color: black;
             border-radius: 5px;
         }
+        a.bg-primary.text-white {
+            padding: 9px 13px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: block;
+        }
     </style>
 </head>
 <body>
     <div class="container-fluid menu">
         <header>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <nav class="navbar navbar-expand-lg navbar-light bg-dark">
                 <div class="collapse navbar-collapse row w-100">
                     <div class="col-md-2">
                         <img src="../../image/Logo-FURAMA-RESORT.jpg" alt="" height="100px">
@@ -28,19 +34,19 @@
                     <div class="col-md-7">
                         <ul class="navbar-nav mr-auto w-100" id="navbarSupportedContent">
                             <li class="nav-item active">
-                                <a class="nav-link" href="/index.jsp">Home<span class="sr-only">(current)</span></a>
+                                <a class="nav-link text-light" href="view/index.jsp">Home</a>
                             </li>
                             <li class="nav-item active">
-                                <a class="nav-link" href="/index.jsp">Employee<span class="sr-only">(current)</span></a>
+                                <a class="nav-link text-light" href="view/employee/employee_list.jsp">Employee</a>
                             </li>
                             <li class="nav-item active">
-                                <a class="nav-link" href="/index.jsp">Customer</a>
+                                <a class="nav-link text-light" href="view/customer/customer_list.jsp">Customer</a>
                             </li>
                             <li class="nav-item active">
-                                <a class="nav-link" href="/facility">Service<span class="sr-only">(current)</span></a>
+                                <a class="nav-link text-light" href="view/facility/facility_list.jsp">Service</a>
                             </li>
                             <li class="nav-item active">
-                                <a class="nav-link" href="#">Contract<span class="sr-only">(current)</span></a>
+                                <a class="nav-link text-light" href="#">Contract</a>
                             </li>
                         </ul>
                     </div>
@@ -54,7 +60,7 @@
             </nav>
         </header>
     </div>
-    <center>
+    <center style="margin-top: 10px;">
         <h2>Employee Management</h2>
         <div class = header-panel>
             <p><a class = "add" href="employee_create.jsp">Add New User</a></p>
