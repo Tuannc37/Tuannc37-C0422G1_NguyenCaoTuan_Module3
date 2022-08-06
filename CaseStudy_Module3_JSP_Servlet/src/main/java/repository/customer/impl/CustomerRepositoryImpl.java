@@ -13,6 +13,7 @@ public class CustomerRepositoryImpl implements ICustomerRepository {
     private final String INSERT_NEW_CUSTOMER = "insert into khach_hang (ma_loai_khach, ho_ten, ngay_sinh, gioi_tinh, so_cmnd, so_dien_thoai, email, dia_chi)\n" +
             "values (?,?,?,?,?,?,?,?);";
     private static final String DELETE_CUSTOMER_SQL = "DELETE FROM khach_hang WHERE ma_khach_hang = ?;";
+    private static final String SELECT_CUSTOMER_BY_ID = "SELECT ma_khach_hang, ma_loai_khach, ho_ten, ngay_sinh, gioi_tinh, so_cmnd, so_dien_thoai, email, dia_chi FROM khach_hang WHERE ma_khach_hang =?";
 
     @Override
     public List<Customer> selectAllCustomer() {
@@ -50,8 +51,40 @@ public class CustomerRepositoryImpl implements ICustomerRepository {
 
     @Override
     public Customer selectCustomer(int id) {
-        return null;
+        Customer customer = null;
+        Connection connection = BaseRepository.getConnection();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(SELECT_CUSTOMER_BY_ID);
+            preparedStatement.setInt(1, id);
+            System.out.println(preparedStatement);
+            ResultSet rs = preparedStatement.executeQuery();
+            while (rs.next()) {
+                int customerId = rs.getInt("ma_khach_hang");
+                int customerTypeId = rs.getInt("ma_loai_khach");
+                String customerName = rs.getString("ho_ten");
+                String customerBirth = rs.getString("ngay_sinh");
+                int customerGender = rs.getInt("gioi_tinh");
+                String customerIdCard = rs.getString("so_cmnd");
+                String customerPhone = rs.getString("so_dien_thoai");
+                String customerEmail = rs.getString("email");
+                String customerAddress = rs.getString("dia_chi");
+
+                customer = new Customer(customerId,
+                        customerTypeId,
+                        customerName,
+                        customerBirth,
+                        customerGender,
+                        customerIdCard,
+                        customerPhone,
+                        customerEmail,
+                        customerAddress);
+            }
+        } catch (SQLException e) {
+            printSQLException(e);
+        }
+        return customer;
     }
+
 
     @Override
     public void insertCustomer(Customer customer) throws SQLException {
@@ -95,5 +128,21 @@ public class CustomerRepositoryImpl implements ICustomerRepository {
     @Override
     public List<Customer> searchCustomer(String idSearch, String nameSearch) {
         return null;
+    }
+
+    private void printSQLException(SQLException ex) {
+        for (Throwable e : ex) {
+            if (e instanceof SQLException) {
+                e.printStackTrace(System.err);
+                System.err.println("SQLState: " + ((SQLException) e).getSQLState());
+                System.err.println("Error Code: " + ((SQLException) e).getErrorCode());
+                System.err.println("Message: " + e.getMessage());
+                Throwable t = ex.getCause();
+                while (t != null) {
+                    System.out.println("Cause: " + t);
+                    t = t.getCause();
+                }
+            }
+        }
     }
 }
