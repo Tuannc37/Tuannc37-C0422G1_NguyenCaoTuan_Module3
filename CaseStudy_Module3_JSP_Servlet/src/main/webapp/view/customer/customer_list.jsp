@@ -51,8 +51,8 @@
                         </ul>
                     </div>
                     <div class="col-md-3">
-                        <form class="form-inline my-2 my-lg-0 row">
-                            <div class = "col-md-7"><input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"></div>
+                        <form class="form-inline my-2 my-lg-0 row" action="/customers?action=search" method="post">
+                            <div class = "col-md-7"><input class="form-control mr-sm-2" name="customerName" type="search" placeholder="Search" aria-label="Search"></div>
                             <div class = "col-md-5"><button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button></div>
                         </form>
                     </div>
@@ -95,7 +95,7 @@
                     <td><c:out value="${customer.customerAddress}"/></td>
                     <td> <a class="bg-primary text-white" href="/customers?action=update&id=${customer.customerId}">Edit</a></td>
                     <td>
-                        <button onclick="showInfoDelete('${customer.customerId}')" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <button onclick="showInfoDelete('${customer.customerId}','${customer.customerName}')" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                             Delete
                         </button>
                     </td>
@@ -123,7 +123,7 @@
             </div>
         </form>
         <script>
-            function showInfoDelete(id) {
+            function showInfoDelete(id,name) {
                 document.getElementById("deleteId").value= id;
                 document.getElementById("deleteName").innerText=name;
             }

@@ -22,7 +22,7 @@ public class CustomerServiceImpl implements ICustomerService {
 
     @Override
     public Customer selectCustomer(int id) {
-        return null;
+        return customerRepository.selectCustomer(id);
     }
 
     @Override
@@ -32,7 +32,7 @@ public class CustomerServiceImpl implements ICustomerService {
 
     @Override
     public boolean updateCustomer(Customer customer) throws SQLException {
-        return false;
+        return customerRepository.updateCustomer(customer);
     }
 
     @Override
@@ -41,8 +41,7 @@ public class CustomerServiceImpl implements ICustomerService {
     }
 
     @Override
-    public List<Customer> searchCustomer(String idSearch, String nameSearch) {
-        return null;
+    public List<Customer> searchCustomer(String nameSearch) {
+        return customerRepository.searchCustomer(nameSearch);
     }
-
 }

@@ -60,7 +60,7 @@
                 <h5 class ="text-center" style="align-content: center; color: #0069d9">CẬP NHẬT</h5>
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Mã khách hàng:</label>
-                    <input type="text" name="customerCode" value="" class="form-control"
+                    <input type="text" name="customerId" value="" class="form-control"
                            id="exampleFormControlInput1"
                            placeholder="KH-XXXX" required>
                     <p style="color: red"></p>

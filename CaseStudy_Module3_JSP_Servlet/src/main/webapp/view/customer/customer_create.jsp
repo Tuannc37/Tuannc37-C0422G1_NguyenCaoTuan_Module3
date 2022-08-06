@@ -68,18 +68,11 @@
 <%--                </div>--%>
                 <div class="form-group">
                     <label for="exampleFormControlSelect1">Loại khách hàng:</label>
-                    <input type="text" name="customerTypeId" value="" class="form-control"
-                    id="exampleFormControlSelect1"
-                    placeholder="" required>
-<%--                    <select class="form-select" name="customerTypeId" id="exampleFormControlSelect1">--%>
-<%--                        <option value="1" >Diamond</option>--%>
-<%--                        <option value="2" >Gold</option>--%>
-<%--                        <option value="3" >Silver</option>--%>
-<%--                        <option value="4" >Member</option>--%>
-<%--                        <c:forEach items="${typeList}" var="type">--%>
-<%--                            <option value="${type.customerTypeId}">${type.customerTypeName}</option>--%>
-<%--                        </c:forEach>--%>
-<%--                    </select>--%>
+                    <select class="form-select" name="customerTypeId" id="exampleFormControlSelect1">
+                        <c:forEach items="${typeList}" var="type">
+                            <option value="${type.customerTypeId}">${type.customerTypeName}</option>
+                        </c:forEach>
+                    </select>
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlInput2">Tên khách hàng:</label>

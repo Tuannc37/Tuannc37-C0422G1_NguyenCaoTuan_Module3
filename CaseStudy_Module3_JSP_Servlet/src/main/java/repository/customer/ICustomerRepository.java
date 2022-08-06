@@ -17,6 +17,6 @@ public interface ICustomerRepository {
 
     public boolean deleteCustomer(int id) throws SQLException;
 
-    public List<Customer> searchCustomer(String idSearch, String nameSearch);
+    public List<Customer> searchCustomer(String nameSearch);
 
 }
