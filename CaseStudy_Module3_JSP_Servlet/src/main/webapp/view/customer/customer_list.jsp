@@ -29,7 +29,7 @@
             <nav class="navbar navbar-expand-lg navbar-light bg-dark">
                 <div class="collapse navbar-collapse row w-100">
                     <div class="col-md-2">
-                        <img src="../../image/Logo-FURAMA-RESORT.jpg" alt="" height="100px">
+                        <img class="ml-5" style="margin-left: 34px;"  src="../../image/Logo-FURAMA-RESORT.jpg" alt="" height="100px">
                     </div>
                     <div class="col-md-7">
                         <ul class="navbar-nav mr-auto w-100" id="navbarSupportedContent">
@@ -63,14 +63,13 @@
     <center style="margin-top: 10px;">
         <h2>Customer Management</h2>
         <div class = header-panel>
-            <p><a class = "add" href="customer_create.jsp">Add New User</a></p>
+            <p><a class = "add" href="/customers?action=create&id=${customer.customerId}">Add New User</a></p>
         </div>
     </center>
-    <div align="center">
-        <table class="table table-info table-striped container">
+    <div align="center container-fluid">
+        <table class="table table-info table-striped ">
             <tr>
                 <th>ID khách hàng</th>
-                <th>Mã khách hàng</th>
                 <th>Loại khách hàng</th>
                 <th>Tên khách hàng</th>
                 <th>Ngày sinh</th>
@@ -82,74 +81,28 @@
                 <th>Sửa</th>
                 <th>Xóa</th>
             </tr>
-            <tr>
-                <td>1</td>
-                <td>21</td>
-                <td>Vip</td>
-                <td>Tuấn</td>
-                <td>10/04/1994</td>
-                <td>Nam</td>
-                <td>121212113</td>
-                <td>03442334</td>
-                <td>dfdfdfdf@gmail.com</td>
-                <td>Nghệ An</td>
-                <td><a class="bg-primary text-white" href="customer_edit.jsp">Edit</a></td>
-                <td><button type="button" class="btn btn-primary bg-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    Xóa
-                </button></td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>21</td>
-                <td>Vip</td>
-                <td>Tuấn</td>
-                <td>10/04/1994</td>
-                <td>Nam</td>
-                <td>121212113</td>
-                <td>03442334</td>
-                <td>dfdfdfdf@gmail.com</td>
-                <td>Nghệ An</td>
-                <td><a class="bg-primary text-white" href="customer_edit.jsp">Edit</a></td>
-                <td><button type="button" class="btn btn-primary bg-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    Xóa
-                </button></td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>21</td>
-                <td>Vip</td>
-                <td>Tuấn</td>
-                <td>10/04/1994</td>
-                <td>Nam</td>
-                <td>121212113</td>
-                <td>03442334</td>
-                <td>dfdfdfdf@gmail.com</td>
-                <td>Nghệ An</td>
-                <td><a class="bg-primary text-white" href="customer_edit.jsp">Edit</a></td>
-                <td><button type="button" class="btn btn-primary bg-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    Xóa
-                </button></td>
-            </tr>
-            <c:forEach var="user" items="${listUser}">
+
+            <c:forEach var="customer" items="${customerList}">
                 <tr>
-                    <td><c:out value=""/></td>
-                    <td><c:out value=""/></td>
-                    <td><c:out value=""/></td>
-                    <td><c:out value=""/></td>
-                    <td><c:out value=""/></td>
-                    <td><c:out value=""/></td>
-                    <td><c:out value=""/></td>
-                    <td><c:out value=""/></td>
-                    <td> <a class="bg-primary text-white" href="customer_edit.jsp">Edit</a></td>
+                    <td><c:out value="${customer.customerId}"/></td>
+                    <td><c:out value="${customer.customerTypeId}"/></td>
+                    <td><c:out value="${customer.customerName}"/></td>
+                    <td><c:out value="${customer.customerBirth}"/></td>
+                    <td><c:out value="${customer.customerGender}"/></td>
+                    <td><c:out value="${customer.customerIdCard}"/></td>
+                    <td><c:out value="${customer.customerPhone}"/></td>
+                    <td><c:out value="${customer.customerEmail}"/></td>
+                    <td><c:out value="${customer.customerAddress}"/></td>
+                    <td> <a class="bg-primary text-white" href="/customers?action=update&id=${customer.customerId}">Edit</a></td>
                     <td>
-                        <button onclick="showInfoDelete('','')" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <button onclick="showInfoDelete('${customer.customerId}')" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                             Delete
                         </button>
                     </td>
                 </tr>
             </c:forEach>
         </table>
-        <form action="/users?action=delete" method="post">
+        <form action="/customers?action=delete" method="post">
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -158,7 +111,7 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <input hidden type="text" name="id" id="deleteId">
+                            <input hidden type="text" name="customerId" id="deleteId">
                             <span>Bạn có muốn xóa : </span><span id="deleteName"></span>
                         </div>
                         <div class="modal-footer">
@@ -170,7 +123,7 @@
             </div>
         </form>
         <script>
-            function showInfoDelete(id,name) {
+            function showInfoDelete(id) {
                 document.getElementById("deleteId").value= id;
                 document.getElementById("deleteName").innerText=name;
             }

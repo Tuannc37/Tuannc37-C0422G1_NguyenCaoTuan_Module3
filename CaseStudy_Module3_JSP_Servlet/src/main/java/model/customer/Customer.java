@@ -2,7 +2,6 @@ package model.customer;
 
 public class Customer {
     private int customerId;
-    private String customerCode;
     private int customerTypeId;
     private String customerName;
     private String customerBirth;
@@ -15,38 +14,8 @@ public class Customer {
     public Customer() {
     }
 
-    public Customer(String customerCode,
-                    int customerTypeId,
-                    String customerName,
-                    String customerBirth,
-                    int customerGender,
-                    String customerIdCard,
-                    String customerPhone,
-                    String customerEmail,
-                    String customerAddress) {
-        this.customerCode = customerCode;
-        this.customerTypeId = customerTypeId;
-        this.customerName = customerName;
-        this.customerBirth = customerBirth;
-        this.customerGender = customerGender;
-        this.customerIdCard = customerIdCard;
-        this.customerPhone = customerPhone;
-        this.customerEmail = customerEmail;
-        this.customerAddress = customerAddress;
-    }
-
-    public Customer(int customerId,
-                    String customerCode,
-                    int customerTypeId,
-                    String customerName,
-                    String customerBirth,
-                    int customerGender,
-                    String customerIdCard,
-                    String customerPhone,
-                    String customerEmail,
-                    String customerAddress) {
+    public Customer(int customerId, int customerTypeId, String customerName, String customerBirth, int customerGender, String customerIdCard, String customerPhone, String customerEmail, String customerAddress) {
         this.customerId = customerId;
-        this.customerCode = customerCode;
         this.customerTypeId = customerTypeId;
         this.customerName = customerName;
         this.customerBirth = customerBirth;
@@ -63,14 +32,6 @@ public class Customer {
 
     public void setCustomerId(int customerId) {
         this.customerId = customerId;
-    }
-
-    public String getCustomerCode() {
-        return customerCode;
-    }
-
-    public void setCustomerCode(String customerCode) {
-        this.customerCode = customerCode;
     }
 
     public int getCustomerTypeId() {

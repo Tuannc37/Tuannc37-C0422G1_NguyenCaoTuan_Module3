@@ -79,11 +79,13 @@
             <td>dsdsds</td>
             <td>dsdsdsds</td>
             <td>
-                <button type="button" class="btn btn-primary bg-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-               +
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#staticBackdrop" onclick="">
+                    +
                 </button>
-                <button type="button" class="btn btn-primary bg-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                   Danh sách các dịch vụ đi kèm
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#attachFacility" onclick="showModalDeleteControl('a','b','c')">
+                    Danh sách các dịch vụ đi kèm
                 </button>
             </td>
         </tr>
@@ -96,10 +98,12 @@
             <td>Nam</td>
             <td>121212113</td>
             <td>
-                <button type="button" class="btn btn-primary bg-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#staticBackdrop" onclick="">
                     +
                 </button>
-                <button type="button" class="btn btn-primary bg-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#attachFacility" onclick="showModalDeleteControl('a','b','c')">
                     Danh sách các dịch vụ đi kèm
                 </button>
             </td>
@@ -113,10 +117,12 @@
             <td>Nam</td>
             <td>121212113</td>
             <td>
-                <button type="button" class="btn btn-primary bg-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#staticBackdrop" onclick="">
                     +
                 </button>
-                <button type="button" class="btn btn-primary bg-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#attachFacility" onclick="showModalDeleteControl('a','b','c')">
                     Danh sách các dịch vụ đi kèm
                 </button>
             </td>
@@ -132,10 +138,12 @@
                 <td><c:out value=""/></td>
                 <td><c:out value=""/></td>
                 <td>
-                    <button type="button" class="btn btn-primary bg-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#staticBackdrop" onclick="">
                         +
                     </button>
-                    <button type="button" class="btn btn-primary bg-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#attachFacility" onclick="showModalDeleteControl('a','b','c')">
                         Danh sách các dịch vụ đi kèm
                     </button>
                 </td>
@@ -178,58 +186,18 @@
                         <div class="col-md-8 bg-light p-3" style="margin: auto">
                             <form action="" method="post">
                                 <div class="mb-2 row">
-                                    <label for="start-date" class="col-sm-4 col-form-label">Ngầy bắt đầu</label>
+                                    <label for="contract-id" class="col-sm-4 col-form-label">Mã hợp đồng</label>
                                     <div class="col-sm-8">
-                                        <input type="date" class="form-control" id="start-date">
+                                        <input type="text" class="form-control" id="contract-id" name="contract-id">
                                     </div>
                                 </div>
                                 <div class="mb-2 row">
-                                    <label for="end-date" class="col-sm-4 col-form-label">Ngày kết thúc</label>
+                                    <label for="attach-facility" class="col-sm-4 col-form-label">Mã dịch vụ đi kèm</label>
                                     <div class="col-sm-8">
-                                        <input type="date" class="form-control" id="end-date">
-                                    </div>
-                                </div>
-                                <div class="mb-2 row">
-                                    <label for="deposit" class="col-sm-4 col-form-label">Tiền gửi</label>
-                                    <div class="col-sm-8">
-                                        <input type="text" class="form-control" id="deposit" name="deposit">
-                                    </div>
-                                </div>
-                                <div class="mb-2 row">
-                                    <label for="total-money" class="col-sm-4 col-form-label">Tổng tiền</label>
-                                    <div class="col-sm-8">
-                                        <input type="text" readonly class="form-control" id="total-money" name="total-money">
+                                        <input type="text" readonly class="form-control" id="attach-facility" name="attach-facility">
                                     </div>
                                 </div>
 
-                                <div class="mb-2 row">
-                                    <label class="col-sm-4 col-form-label">Khách hàng thuê dịch vụ</label>
-                                    <div class="col-sm-8">
-                                        <select name=""  class="form-select">
-                                            <option value="diamond" >Diamond</option>
-                                            <option value="gold" >Gold</option>
-                                            <option value="silver" >Silver</option>
-                                            <option value="member" >Member</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="mb-2 row">
-                                    <label class="col-sm-4 col-form-label">Dịch vụ</label>
-                                    <div class="col-sm-8">
-                                        <select name=""  class="form-select">
-                                            <option value="Villa" >Villa</option>
-                                            <option value="House" >House</option>
-                                            <option value="Room" >Room</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="mb-2 row">
-                                    <label  class="col-sm-4 col-form-label">Dịch vụ đi kèm</label>
-                                    <div class="col-sm-8">
-                                        <button type="button" class="btn btn-primary bg-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                            +
-                                        </button>
-                                    </div>
                                 </div>
                             </form>
                         </div>
@@ -244,8 +212,33 @@
     </div>
 
 
+    <div class="modal fade" id="attachFacility" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
 
-
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalEditLable">DANH SÁCH DỊCH VỤ ĐI KÈM</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body container-fluid">
+                    <table class="table table-striped">
+                        <tr>
+                            <th>Tên dịch vụ đi kèm</th>
+                            <th>Đơn vị</th>
+                            <th>Giá tiền</th>
+                            <th>Số lượng</th>
+                        </tr>
+                        <tr>
+                            <td>Karaoke</td>
+                            <td>Giờ</td>
+                            <td>100000</td>
+                            <td>1</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 
@@ -254,6 +247,14 @@
         function showInfoDelete(id,name) {
             document.getElementById("deleteId").value= id;
             document.getElementById("deleteName").innerText=name;
+        }
+        function displayAttachFacility() {
+            document.getElementById("tableFacilityContract").style.display='block'
+            document.getElementById("buttonHide").style.display='block'
+        }
+            function hideAttachFacility() {
+            document.getElementById("tableFacilityContract").style.display='none'
+            document.getElementById("buttonHide").style.display='none'
         }
     </script>
 </div>

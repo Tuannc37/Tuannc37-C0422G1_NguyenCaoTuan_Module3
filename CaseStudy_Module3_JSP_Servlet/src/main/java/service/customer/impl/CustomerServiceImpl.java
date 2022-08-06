@@ -20,4 +20,29 @@ public class CustomerServiceImpl implements ICustomerService {
         return customerRepository.selectAllCustomer();
     }
 
+    @Override
+    public Customer selectCustomer(int id) {
+        return null;
+    }
+
+    @Override
+    public void insertCustomer(Customer customer) throws SQLException {
+        customerRepository.insertCustomer(customer);
+    }
+
+    @Override
+    public boolean updateCustomer(Customer customer) throws SQLException {
+        return false;
+    }
+
+    @Override
+    public boolean deleteCustomer(int id) throws SQLException {
+        return customerRepository.deleteCustomer(id);
+    }
+
+    @Override
+    public List<Customer> searchCustomer(String idSearch, String nameSearch) {
+        return null;
+    }
+
 }

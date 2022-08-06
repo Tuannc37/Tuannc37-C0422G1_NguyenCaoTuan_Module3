@@ -23,7 +23,7 @@
             <nav class="navbar navbar-expand-lg navbar-light bg-dark">
                 <div class="collapse navbar-collapse row w-100">
                     <div class="col-md-2">
-                        <img src="../../image/Logo-FURAMA-RESORT.jpg" alt="" height="100px">
+                        <img class="ml-5" style="margin-left: 34px;" src="../../image/Logo-FURAMA-RESORT.jpg" alt="" height="100px">
                     </div>
                     <div class="col-md-7">
                         <ul class="navbar-nav mr-auto w-100" id="navbarSupportedContent">
@@ -59,24 +59,27 @@
         <div class="container w-50">
             <form action="/customers?action=create" method="post">
                 <h5 style="align-content: center; color: #0069d9">THÊM MỚI CUSTOMER</h5>
-                <div class="form-group">
-                    <label for="exampleFormControlInput1">Mã khách hàng:</label>
-                    <input type="text" name="customerCode" value="" class="form-control"
-                           id="exampleFormControlInput1"
-                           placeholder="KH-XXXX" required>
-                    <p style="color: red"></p>
-                </div>
+<%--                <div class="form-group">--%>
+<%--                    <label for="exampleFormControlInput1">Mã lọai khách:</label>--%>
+<%--                    <input type="text" name="customerCode" value="" class="form-control"--%>
+<%--                           id="exampleFormControlInput1"--%>
+<%--                           placeholder="KH-XXXX" required>--%>
+<%--                    <p style="color: red"></p>--%>
+<%--                </div>--%>
                 <div class="form-group">
                     <label for="exampleFormControlSelect1">Loại khách hàng:</label>
-                    <select class="form-select" name="customerTypeId" id="exampleFormControlSelect1">
-                        <option value="diamond" >Diamond</option>
-                        <option value="gold" >Gold</option>
-                        <option value="silver" >Silver</option>
-                        <option value="member" >Member</option>
+                    <input type="text" name="customerTypeId" value="" class="form-control"
+                    id="exampleFormControlSelect1"
+                    placeholder="" required>
+<%--                    <select class="form-select" name="customerTypeId" id="exampleFormControlSelect1">--%>
+<%--                        <option value="1" >Diamond</option>--%>
+<%--                        <option value="2" >Gold</option>--%>
+<%--                        <option value="3" >Silver</option>--%>
+<%--                        <option value="4" >Member</option>--%>
 <%--                        <c:forEach items="${typeList}" var="type">--%>
 <%--                            <option value="${type.customerTypeId}">${type.customerTypeName}</option>--%>
 <%--                        </c:forEach>--%>
-                    </select>
+<%--                    </select>--%>
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlInput2">Tên khách hàng:</label>
