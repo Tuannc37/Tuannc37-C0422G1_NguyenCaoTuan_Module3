@@ -119,6 +119,7 @@ public class CustomerServlet extends HttpServlet {
         String customerEmail = request.getParameter("customerEmail");
         String customerAddress = request.getParameter("customerAddress");
 
+
         Customer customer = new Customer(customerId, customerTypeId, customerName,customerBirth,customerGender,customerIdCard,customerPhone,customerEmail,customerAddress);
         try {
             customerService.updateCustomer(customer);

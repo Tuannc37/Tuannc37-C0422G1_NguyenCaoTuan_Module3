@@ -31,21 +31,21 @@
             <nav class="navbar navbar-expand-lg navbar-light bg-dark">
                 <div class="collapse navbar-collapse row w-100">
                     <div class="col-md-2">
-                        <img src="../../image/Logo-FURAMA-RESORT.jpg" alt="" height="100px" style="margin-left: 34px;">
+                        <img class="ml-5" style="margin-left: 34px;" src="image/Logo-FURAMA-RESORT.jpg" alt="" height="100px">
                     </div>
                     <div class="col-md-7">
                         <ul class="navbar-nav mr-auto w-100" id="navbarSupportedContent">
                             <li class="nav-item active">
-                                <a class="nav-link text-light" href="view/index.jsp">Home</a>
+                                <a class="nav-link text-light" href="">Home</a>
                             </li>
                             <li class="nav-item active">
-                                <a class="nav-link text-light" href="view/employee/employee_list.jsp">Employee</a>
+                                <a class="nav-link text-light" href="/employee">Employee</a>
                             </li>
                             <li class="nav-item active">
-                                <a class="nav-link text-light" href="view/customer/customer_list.jsp">Customer</a>
+                                <a class="nav-link text-light" href="/customers">Customer</a>
                             </li>
                             <li class="nav-item active">
-                                <a class="nav-link text-light" href="view/facility/facility_list.jsp">Service</a>
+                                <a class="nav-link text-light" href="/facility">Service</a>
                             </li>
                             <li class="nav-item active">
                                 <a class="nav-link text-light" href="#">Contract</a>
@@ -62,131 +62,82 @@
             </nav>
         </header>
     </div>
-    <center style="margin-top: 10px;">
-        <h2>Facility Management</h2>
-        <div class = header-panel>
-            <p><a class = "add" href="facility_create.jsp">Add New User</a></p>
-        </div>
-    </center>
-    <div align="center">
-        <table class="table table-info table-striped container">
-            <tr>
-                <th>ID Dịch vụ</th>
-                <th>Tên dịch vụ</th>
-                <th>Diện tích phòng</th>
-                <th>Giá phòng</th>
-                <th>Số người tối đa</th>
-                <th>Kiểu thuê</th>
-                <th>Loại dịch vụ</th>
-                <th>Tiêu chuẩn phòng</th>
-                <th>Mô tả khác</th>
-                <th>Diện tích hồ bơi</th>
-                <th>Số tầng</th>
-                <th>Sửa</th>
-                <th>Xóa</th>
-            </tr>
-
-            <tr>
-                <td class ="">1</td>
-                <td>Xông hơi</td>
-                <td>30</td>
-                <td>2000</td>
-                <td>4000</td>
-                <td>2</td>
-                <td>Không có</td>
-                <td>Vip</td>
-                <td>không có</td>
-                <td>40</td>
-                <td>12</td>
-                <td><a class="bg-primary text-white" href="facility_edit.jsp">Edit</a></td>
-                <td><button type="button" class="btn btn-primary bg-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    Xóa
-                </button></td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Xông hơi</td>
-                <td>30</td>
-                <td>2000</td>
-                <td>4000</td>
-                <td>2</td>
-                <td>Không có</td>
-                <td>Vip</td>
-                <td>không có</td>
-                <td>40</td>
-                <td>12</td>
-                <td><a class="bg-primary text-white" href="facility_edit.jsp">Edit</a></td>
-                <td><button type="button" class="btn btn-primary bg-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    Xóa
-                </button></td>
-            </tr>
-
-            <tr>
-                <td>3</td>
-                <td>Xông hơi</td>
-                <td>30</td>
-                <td>2000</td>
-                <td>4000</td>
-                <td>2</td>
-                <td>Không có</td>
-                <td>Vip</td>
-                <td>không có</td>
-                <td>40</td>
-                <td>12</td>
-                <td><a class="bg-primary text-white" href="facility_edit.jsp">Edit</a></td>
-                <td><button type="button" class="btn btn-primary bg-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    Xóa
-                </button></td>
-            </tr>
-
-            <c:forEach var="user" items="${listUser}">
+    <div class = "container-fluid">
+        <center style="margin-top: 10px;">
+            <h2>Facility Management</h2>
+            <div class = header-panel>
+                <p><a class = "add" href="/facility?action=create&id=${facility.serviceId}">Add New Facility</a></p>
+            </div>
+        </center>
+        <div align="center">
+            <table class="table table-info table-striped container">
                 <tr>
-                    <td><c:out value=""/></td>
-                    <td><c:out value=""/></td>
-                    <td><c:out value=""/></td>
-                    <td><c:out value=""/></td>
-                    <td><c:out value=""/></td>
-                    <td><c:out value=""/></td>
-                    <td><c:out value=""/></td>
-                    <td><c:out value=""/></td>
-                    <td><c:out value=""/></td>
-                    <td><c:out value=""/></td>
-                    <td><c:out value=""/></td>
-                    <td> <a class="bg-primary text-white" href="facility_edit.jsp">Edit</a></td>
-                    <td>
-                        <button onclick="showInfoDelete('${user.id}','${user.name}')" type="button" class="btn btn-primary bg-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                            Delete
-                        </button>
-                    </td>
+                    <th>ID Dịch vụ</th>
+                    <th>Tên dịch vụ</th>
+                    <th>Diện tích phòng</th>
+                    <th>Giá phòng</th>
+                    <th>Số người tối đa</th>
+                    <th>Kiểu thuê</th>
+                    <th>Loại dịch vụ</th>
+                    <th>Tiêu chuẩn phòng</th>
+                    <th>Mô tả khác</th>
+                    <th>Diện tích hồ bơi</th>
+                    <th>Số tầng</th>
+                    <th>Dịch vụ đi kèm</th>
+                    <th>Sửa</th>
+                    <th>Xóa</th>
                 </tr>
-            </c:forEach>
-        </table>
-        <form action="/users?action=delete" method="post">
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <input hidden type="text" name="id" id="deleteId">
-                            <span>Bạn có muốn xóa : </span><span id="deleteName"></span>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary">Delete</button>
+
+                <c:forEach var="facility" items="${facilityList}">
+                    <tr>
+                        <td><c:out value="${facility.serviceId}"/></td>
+                        <td><c:out value="${facility.serviceName}"/></td>
+                        <td><c:out value="${facility.serviceArea}"/></td>
+                        <td><c:out value="${facility.serviceCost}"/></td>
+                        <td><c:out value="${facility.serviceMaxPeople}"/></td>
+                        <td><c:out value="${facility.rentTypeId}"/></td>
+                        <td><c:out value="${facility.serviceTypeId}"/></td>
+                        <td><c:out value="${facility.standardRoom}"/></td>
+                        <td><c:out value="${facility.description}"/></td>
+                        <td><c:out value="${facility.poolArea}"/></td>
+                        <td><c:out value="${facility.numberOfFloor}"/></td>
+                        <td><c:out value="${facility.freeAccompanying}"/></td>
+                        <td> <a class="bg-primary text-white" href="/facility?action=create&id=${facility.serviceId}">Edit</a></td>
+                        <td>
+                            <button onclick="showInfoDelete('${facility.serviceId}','${facility.serviceName}')" type="button" class="btn btn-primary bg-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                Delete
+                            </button>
+                        </td>
+                    </tr>
+                </c:forEach>
+            </table>
+            <form action="/facility?action=delete" method="post">
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <input hidden type="text" name="serviceId" id="deleteId">
+                                <span>Bạn có muốn xóa : </span><span id="deleteName"></span>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary">Delete</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </form>
-        <script>
-            function showInfoDelete(id,name) {
-                document.getElementById("deleteId").value= id;
-                document.getElementById("deleteName").innerText=name;
-            }
-        </script>
+            </form>
+            <script>
+                function showInfoDelete(id,name) {
+                    document.getElementById("deleteId").value= id;
+                    document.getElementById("deleteName").innerText=name;
+                }
+            </script>
+        </div>
     </div>
 
 </body>

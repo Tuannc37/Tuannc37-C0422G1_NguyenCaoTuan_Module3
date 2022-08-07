@@ -7,13 +7,14 @@ import java.util.Map;
 
 public interface IFacilityService {
 
+
     public List<Facility> selectAllFacility();
 
     public Facility selectFacility(int id);
 
-    public Map<String, String> save(Facility facility);
+    public void insertFacility(Facility facility);
 
-    public Map<String, String> updateFacility(Facility facility);
+    public boolean updateFacility(Facility facility);
 
     public boolean deleteFacility(int id);
 

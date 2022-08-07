@@ -11,6 +11,9 @@
         img.card-img-top.img-fluid {
             height: 150px;
         }
+        iframe {
+            border-radius: 12px;
+        }
     </style>
 </head>
 <body>
@@ -83,7 +86,7 @@
                                 <img src="image/1-garden-deluxe-furama-resort-tgroup-travel.jpg"
                                      class="card-img-top img-fluid" alt="...">
                                 <div class="card-body">
-                                    <h5 href="" class="text-decoration-none" style="color: blue">
+                                    <h5 href="" class="text-decoration-none text-center" style="color: blue">
                                         Đặt phòng
                                     </h5>
                                 </div>
@@ -94,7 +97,7 @@
                                 <img src="image/10953_17080216380054845067.jpg"
                                      class="card-img-top img-fluid" alt="...">
                                 <div class="card-body">
-                                    <h5 href="" class="text-decoration-none" style="color: blue">
+                                    <h5 href="" class="text-decoration-none text-center" style="color: blue">
                                         Giải trí
                                     </h5>
                                 </div>
@@ -108,7 +111,7 @@
                                 <img src="image/th.jpg"
                                      class="card-img-top img-fluid" alt="...">
                                 <div class="card-body">
-                                    <h5 href=""class="text-decoration-none" style="color: blue">
+                                    <h5 href=""class="text-decoration-none text-center" style="color: blue">
                                         Ẩm thực
                                     </h5>
                                 </div>
@@ -119,7 +122,7 @@
                                 <img src="image/hinh-anh-thuc-te-furama-resort.jpg"
                                      class="card-img-top img-fluid" alt="...">
                                 <div class="card-body">
-                                    <h5 href="" class="text-decoration-none" style="color: blue">
+                                    <h5 href="" class="text-decoration-none text-center" style="color: blue">
                                         Cảnh quan
                                     </h5>
                                 </div>

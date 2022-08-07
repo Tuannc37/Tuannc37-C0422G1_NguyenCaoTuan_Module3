@@ -15,16 +15,16 @@
                 <div class="col-md-7">
                     <ul class="navbar-nav mr-auto w-100" id="navbarSupportedContent">
                         <li class="nav-item active">
-                            <a class="nav-link text-light" href="view/index.jsp">Home</a>
+                            <a class="nav-link text-light" href="">Home</a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link text-light" href="view/employee/employee_list.jsp">Employee</a>
+                            <a class="nav-link text-light" href="/employee">Employee</a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link text-light" href="view/customer/customer_list.jsp">Customer</a>
+                            <a class="nav-link text-light" href="/customers">Customer</a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link text-light" href="/view/facility/facility_list.jsp">Service</a>
+                            <a class="nav-link text-light" href="/facility">Service</a>
                         </li>
                         <li class="nav-item active">
                             <a class="nav-link text-light" href="#">Contract</a>

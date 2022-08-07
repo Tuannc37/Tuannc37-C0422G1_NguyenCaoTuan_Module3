@@ -12,83 +12,12 @@ public class Facility {
     private String description;
     private double poolArea;
     private int numberOfFloor;
+    private String freeAccompanying;
 
-    public Facility() {
+    public Facility(String serviceName, int serviceArea, double serviceCost, int serviceMaxPeople, int rentTypeId, int serviceTypeId, String standardRoom, String description, double poolArea, int numberOfFloor, String freeAccompanying) {
     }
 
-    public Facility(int serviceId,
-                    String serviceName,
-                    int serviceArea,
-                    double serviceCost,
-                    int serviceMaxPeople,
-                    int rentTypeId,
-                    int serviceTypeId,
-                    String description) {
-        this.serviceId = serviceId;
-        this.serviceName = serviceName;
-        this.serviceArea = serviceArea;
-        this.serviceCost = serviceCost;
-        this.serviceMaxPeople = serviceMaxPeople;
-        this.rentTypeId = rentTypeId;
-        this.serviceTypeId = serviceTypeId;
-        this.description = description;
-    }
-
-    public Facility(String serviceName,
-                    int serviceArea,
-                    double serviceCost,
-                    int serviceMaxPeople,
-                    int rentTypeId,
-                    int serviceTypeId,
-                    String standardRoom,
-                    String description,
-                    double poolArea,
-                    int numberOfFloor) {
-        this.serviceName = serviceName;
-        this.serviceArea = serviceArea;
-        this.serviceCost = serviceCost;
-        this.serviceMaxPeople = serviceMaxPeople;
-        this.rentTypeId = rentTypeId;
-        this.serviceTypeId = serviceTypeId;
-        this.standardRoom = standardRoom;
-        this.description = description;
-        this.poolArea = poolArea;
-        this.numberOfFloor = numberOfFloor;
-    }
-
-    public Facility(int serviceId,
-                    String serviceName,
-                    int serviceArea,
-                    double serviceCost,
-                    int serviceMaxPeople,
-                    int rentTypeId,
-                    int serviceTypeId,
-                    String standardRoom,
-                    String description,
-                    int numberOfFloor) {
-        this.serviceId = serviceId;
-        this.serviceName = serviceName;
-        this.serviceArea = serviceArea;
-        this.serviceCost = serviceCost;
-        this.serviceMaxPeople = serviceMaxPeople;
-        this.rentTypeId = rentTypeId;
-        this.serviceTypeId = serviceTypeId;
-        this.standardRoom = standardRoom;
-        this.description = description;
-        this.numberOfFloor = numberOfFloor;
-    }
-
-    public Facility(int serviceId,
-                    String serviceName,
-                    int serviceArea,
-                    double serviceCost,
-                    int serviceMaxPeople,
-                    int rentTypeId,
-                    int serviceTypeId,
-                    String standardRoom,
-                    String description,
-                    double poolArea,
-                    int numberOfFloor) {
+    public Facility(int serviceId, String serviceName, int serviceArea, double serviceCost, int serviceMaxPeople, int rentTypeId, int serviceTypeId, String standardRoom, String description, double poolArea, int numberOfFloor, String freeAccompanying) {
         this.serviceId = serviceId;
         this.serviceName = serviceName;
         this.serviceArea = serviceArea;
@@ -100,6 +29,7 @@ public class Facility {
         this.description = description;
         this.poolArea = poolArea;
         this.numberOfFloor = numberOfFloor;
+        this.freeAccompanying = freeAccompanying;
     }
 
     public int getServiceId() {
@@ -188,5 +118,13 @@ public class Facility {
 
     public void setNumberOfFloor(int numberOfFloor) {
         this.numberOfFloor = numberOfFloor;
+    }
+
+    public String getFreeAccompanying() {
+        return freeAccompanying;
+    }
+
+    public void setFreeAccompanying(String freeAccompanying) {
+        this.freeAccompanying = freeAccompanying;
     }
 }

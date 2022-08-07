@@ -7,7 +7,7 @@ import java.util.Map;
 
 public interface IRentTypeService {
 
-    List<RentType> selectAll();
+    public List<RentType> selectAll();
 
     public Map<Integer, String> selectRentType();
 

@@ -18,21 +18,21 @@
             <nav class="navbar navbar-expand-lg navbar-light bg-dark">
                 <div class="collapse navbar-collapse row w-100">
                     <div class="col-md-2">
-                        <img src="../../image/Logo-FURAMA-RESORT.jpg" alt="" height="100px" style="margin-left: 34px;">
+                        <img class="ml-5" style="margin-left: 34px;" src="image/Logo-FURAMA-RESORT.jpg" alt="" height="100px">
                     </div>
                     <div class="col-md-7">
                         <ul class="navbar-nav mr-auto w-100" id="navbarSupportedContent">
                             <li class="nav-item active">
-                                <a class="nav-link text-light" href="view/index.jsp">Home</a>
+                                <a class="nav-link text-light" href="">Home</a>
                             </li>
                             <li class="nav-item active">
-                                <a class="nav-link text-light" href="view/employee/employee_list.jsp">Employee</a>
+                                <a class="nav-link text-light" href="/employee">Employee</a>
                             </li>
                             <li class="nav-item active">
-                                <a class="nav-link text-light" href="view/customer/customer_list.jsp">Customer</a>
+                                <a class="nav-link text-light" href="/customers">Customer</a>
                             </li>
                             <li class="nav-item active">
-                                <a class="nav-link text-light" href="view/facility/facility_list.jsp">Service</a>
+                                <a class="nav-link text-light" href="/facility">Service</a>
                             </li>
                             <li class="nav-item active">
                                 <a class="nav-link text-light" href="#">Contract</a>
@@ -49,7 +49,7 @@
             </nav>
         </header>
     </div>
-    <div class="container w-50 mt-2 p-2">
+    <div class="container w-50 mt-2 p-2 container-fluid">
         <h3 align="center">CẬP NHẬT DỊCH VỤ</h3>
         <form class="form-group" action="" method="post">
             <div class="col-md-12">

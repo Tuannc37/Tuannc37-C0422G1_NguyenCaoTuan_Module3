@@ -10,7 +10,7 @@ public interface IFacilityRepository {
 
     public List<Facility> selectAllFacility();
 
-    public Facility selectEmployee(int id);
+    public Facility selectFacility(int id);
 
     public void insertFacility(Facility facility);
 
