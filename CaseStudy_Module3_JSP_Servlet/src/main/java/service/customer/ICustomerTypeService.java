@@ -5,5 +5,4 @@ import java.util.List;
 
 public interface ICustomerTypeService {
     List<CustomerType> selectAll();
-
 }

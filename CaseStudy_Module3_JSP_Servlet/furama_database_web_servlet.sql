@@ -43,7 +43,7 @@ create table loai_khach(
 );
 
 create table khach_hang(
-	ma_khach_hang int primary key,
+	ma_khach_hang int primary key auto_increment,
     ma_loai_khach int,
     ho_ten varchar(45),
     ngay_sinh date,

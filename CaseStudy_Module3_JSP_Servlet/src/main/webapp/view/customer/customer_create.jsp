@@ -89,8 +89,8 @@
                 <div class="form-group">
                     <label for="exampleFormControlSelect2">Giới tính:</label>
                     <div id="exampleFormControlSelect2">
-                        <input type="radio" name="customerGender" value="0" checked>Nam
-                        <input type="radio" name="customerGender" value="1">Nữ
+                        <input type="radio" name="customerGender" value="1" checked>Nam
+                        <input type="radio" name="customerGender" value="2">Nữ
                     </div>
                 </div>
                 <div class="form-group">

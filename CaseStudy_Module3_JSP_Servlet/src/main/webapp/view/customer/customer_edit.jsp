@@ -30,6 +30,7 @@
                             <li class="nav-item active">
                                 <a class="nav-link text-light" href="view/index.jsp">Home</a>
                             </li>
+                            mấy cái này là link trên nav bả pk a/link bữa a set cứng á à, sửa lại qua servlet k a tiến nói đó
                             <li class="nav-item active">
                                 <a class="nav-link text-light" href="view/employee/employee_list.jsp">Employee</a>
                             </li>
@@ -56,70 +57,79 @@
     </div>
     <div class="edit-form">
         <div class="container w-50">
-            <form action="/customers?action=create" method="post">
+            <form action="/customers?action=update" method="post">
                 <h5 class ="text-center" style="align-content: center; color: #0069d9">CẬP NHẬT</h5>
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Mã khách hàng:</label>
-                    <input type="text" name="customerId" value="" class="form-control"
-                           id="exampleFormControlInput1"
-                           placeholder="KH-XXXX" required>
+                    <input readonly type="text" name="customerId" value="${customer.customerId}" class="form-control"
+                           id="exampleFormControlInput1">
                     <p style="color: red"></p>
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlSelect1">Loại khách hàng:</label>
                     <select class="form-select" name="customerTypeId" id="exampleFormControlSelect1">
-                        <option value="diamond" >Diamond</option>
-                        <option value="gold" >Gold</option>
-                        <option value="silver" >Silver</option>
-                        <option value="member" >Member</option>
-<%--                        <c:forEach items="${typeList}" var="type">--%>
-<%--                            <option value="${type.customerTypeId}">${type.customerTypeName}</option>--%>
-<%--                        </c:forEach>--%>
+                        <c:forEach items="${typeList}" var="type">
+                           <c:if test="${type.customerTypeId == customer.customerTypeId}">
+                               <option value="${type.customerTypeId}">${type.customerTypeName}</option>
+                           </c:if>
+                        </c:forEach>
+                        <c:forEach items="${typeList}" var="type">
+                            <c:if test="${type.customerTypeId != customer.customerTypeId}">
+                            <option value="${type.customerTypeId}">${type.customerTypeName}</option>
+                            </c:if>
+                        </c:forEach>
+                        // lamf vậy để nó hiển thị đúng cái đầu  tiên là cái loại khách hàng hiện tại của minh
+                        để lỡ người ta k sửa cái loại khách hàng thì nó vẫn đúng
                     </select>
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlInput2">Tên khách hàng:</label>
-                    <input type="text" name="customerName" class="form-control" value=""
-                           id="exampleFormControlInput2"
-                           placeholder="Nguyen Van A" required>
+                    <input type="text" name="customerName" class="form-control" value="${customer.customerName}"
+                           id="exampleFormControlInput2">
                     <p style="color: red"></p>
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlInput3">Ngày sinh:</label>
-                    <input type="date" name="customerBirth" class="form-control" value=""
+                    <input type="date" name="customerBirth" class="form-control" value="${customer.customerBirth}"
                            id="exampleFormControlInput3" required>
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlSelect2">Giới tính:</label>
-                    <div id="exampleFormControlSelect2">
-                        <input type="radio" name="customerGender" value="0" checked>Nam
-                        <input type="radio" name="customerGender" value="1">Nữ
-                    </div>
+                    <select id="exampleFormControlSelect2" class="form-select" name="customerGender">
+                       <c:if test="${customer.customerGender == 0}">
+                           <option value="0">Nữ</option>
+                           <option value="1">Nam</option>
+                       </c:if>
+                        <c:if test="${customer.customerGender == 1}">
+                            <option value="1">Nam</option>
+                            <option value="0">Nữ</option>
+                        </c:if>
+                    </select>
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlInput4">Số CMND:</label>
-                    <input type="text" name="customerIdCard" class="form-control" value=""
+                    <input type="text" name="customerIdCard" class="form-control" value="${customer.customerIdCard}"
                            id="exampleFormControlInput4"
                            placeholder="XXXXXXXX or XXXXXXXXXX" required>
                     <p style="color: red"></p>
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlInput5">Số điện thoại:</label>
-                    <input type="text" name="customerPhone" class="form-control" value=""
+                    <input type="text" name="customerPhone" class="form-control" value="${customer.customerPhone}"
                            id="exampleFormControlInput5"
                            placeholder="(84)90xxxxxxx or (84)91xxxxxxx" required>
                     <p style="color: red"></p>
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlInput6">Email:</label>
-                    <input type="text" name="customerEmail" class="form-control" value=""
+                    <input type="text" name="customerEmail" class="form-control" value="${customer.customerEmail}"
                            id="exampleFormControlInput6"
                            placeholder="abcxyz@gmail.com">
                     <p style="color: red"></p>
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlInput7">Địa chỉ:</label>
-                    <input type="text" name="customerAddress" class="form-control" value=""
+                    <input type="text" name="customerAddress" class="form-control" value="${customer.customerAddress}"
                            id="exampleFormControlInput7" required>
                 </div>
                 <div class="w-100 mt-20 text-center">

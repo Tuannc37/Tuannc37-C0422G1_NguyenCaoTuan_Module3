@@ -84,7 +84,7 @@ public class CustomerServlet extends HttpServlet {
         Customer existCustomer = customerService.selectCustomer(customerId);
         List<CustomerType> typeList = customerTypeRepository.selectAll();
         request.setAttribute("typeList",typeList);
-        request.setAttribute("customerList",existCustomer);
+        request.setAttribute("customer",existCustomer);
         RequestDispatcher dispatcher = request.getRequestDispatcher("view/customer/customer_edit.jsp");
         try {
             dispatcher.forward(request,response);
@@ -109,6 +109,7 @@ public class CustomerServlet extends HttpServlet {
     }
 
     private void update(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        int customerId = Integer.parseInt(request.getParameter("customerId"));
         int customerTypeId = Integer.parseInt(request.getParameter("customerTypeId"));
         String customerName = request.getParameter("customerName");
         String customerBirth = request.getParameter("customerBirth");
@@ -118,16 +119,13 @@ public class CustomerServlet extends HttpServlet {
         String customerEmail = request.getParameter("customerEmail");
         String customerAddress = request.getParameter("customerAddress");
 
-        Customer customer = new Customer(customerTypeId, customerTypeId, customerName,customerBirth,customerGender,customerIdCard,customerPhone,customerEmail,customerAddress);
+        Customer customer = new Customer(customerId, customerTypeId, customerName,customerBirth,customerGender,customerIdCard,customerPhone,customerEmail,customerAddress);
         try {
             customerService.updateCustomer(customer);
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        List<CustomerType> typeList = customerTypeRepository.selectAll();
-        request.setAttribute("typeList",typeList);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("view/customer/customer_edit.jsp");
-        dispatcher.forward(request, response);
+        showCustomerList(request,response);
     }
 
     private void insertCustomer(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -146,10 +144,7 @@ public class CustomerServlet extends HttpServlet {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        List<CustomerType> typeList = customerTypeRepository.selectAll();
-        request.setAttribute("typeList",typeList);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("view/customer/customer_create.jsp");
-        dispatcher.forward(request, response);
+        showCustomerList(request,response);
     }
 
 
