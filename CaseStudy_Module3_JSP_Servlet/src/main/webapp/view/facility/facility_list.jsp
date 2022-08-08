@@ -53,8 +53,8 @@
                         </ul>
                     </div>
                     <div class="col-md-3">
-                        <form class="form-inline my-2 my-lg-0 row">
-                            <div class = "col-md-7"><input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"></div>
+                        <form class="form-inline my-2 my-lg-0 row" action="/facility?action=search" method="post">
+                            <div class = "col-md-7"><input class="form-control mr-sm-2" name="serviceName"  type="search" placeholder="Search" aria-label="Search"></div>
                             <div class = "col-md-5"><button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button></div>
                         </form>
                     </div>
@@ -66,7 +66,7 @@
         <center style="margin-top: 10px;">
             <h2>Facility Management</h2>
             <div class = header-panel>
-                <p><a class = "add" href="/facility?action=create&id=${facility.serviceId}">Add New Facility</a></p>
+                <p><a class = "add" href="/facility?action=create&serviceId=${facility.serviceId}">Add New Facility</a></p>
             </div>
         </center>
         <div align="center">
@@ -102,7 +102,7 @@
                         <td><c:out value="${facility.poolArea}"/></td>
                         <td><c:out value="${facility.numberOfFloor}"/></td>
                         <td><c:out value="${facility.freeAccompanying}"/></td>
-                        <td> <a class="bg-primary text-white" href="/facility?action=create&id=${facility.serviceId}">Edit</a></td>
+                        <td> <a class="bg-primary text-white" href="/facility?action=update&serviceId=${facility.serviceId}">Edit</a></td>
                         <td>
                             <button onclick="showInfoDelete('${facility.serviceId}','${facility.serviceName}')" type="button" class="btn btn-primary bg-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                 Delete

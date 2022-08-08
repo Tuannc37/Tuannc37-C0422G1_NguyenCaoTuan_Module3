@@ -77,8 +77,6 @@
                             <option value="${type.customerTypeId}">${type.customerTypeName}</option>
                             </c:if>
                         </c:forEach>
-                        // lamf vậy để nó hiển thị đúng cái đầu  tiên là cái loại khách hàng hiện tại của minh
-                        để lỡ người ta k sửa cái loại khách hàng thì nó vẫn đúng
                     </select>
                 </div>
                 <div class="form-group">

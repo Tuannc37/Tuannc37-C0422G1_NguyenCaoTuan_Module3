@@ -61,18 +61,6 @@
                     <option value="Room" >Room</option>
                 </select>
             </div>
-<%--            private int serviceId;--%>
-<%--            private String serviceName;--%>
-<%--            private int serviceArea;--%>
-<%--            private double serviceCost;--%>
-<%--            private int serviceMaxPeople;--%>
-<%--            private int rentTypeId;--%>
-<%--            private int serviceTypeId;--%>
-<%--            private String standardRoom;--%>
-<%--            private String description;--%>
-<%--            private double poolArea;--%>
-<%--            private int numberOfFloor;--%>
-            <%--Dịch vụ mặc định--%>
             <div class="col-md-12">
                 <label for="name" class="form-label">Tên dịch vụ:</label>
                 <input type="text" class="form-control" id="name" name="serviceName">
@@ -97,11 +85,11 @@
             <%--Villa và House sẽ có chung--%>
             <div class="col-md-12" id="dv1" style="display: none">
                 <label for="standard_room" class="form-label">Tiêu chuẩn phòng:</label>
-                <input type="text" class="form-control" id="standard_room" name="serviceTypeId">
+                <input type="text" class="form-control" id="standard_room" name="standardRoom">
             </div>
             <div class="col-md-12" id="dv2" style="display: none">
                 <label for="description_other_convenience" class="form-label">Mô tả tiện nghi khác:</label>
-                <input type="text" class="form-control" id="description_other_convenience" name="standardRoom">
+                <input type="text" class="form-control" id="description_other_convenience" name="description">
             </div>
             <div class="col-md-12" id="dv3" style="display: none">
                 <label for="number_of_floors" class="form-label">Số tầng:</label>
@@ -117,7 +105,7 @@
             Riêng Room sẽ có thêm
             <div class="col-md-12" id="dv5" style="display: none">
                 <label for="facility_free" class="form-label">Dịch vụ miễn phí đi kèm:</label>
-                <input type="text" class="form-control" id="facility_free" name="facility_free">
+                <input type="text" class="form-control" id="facility_free" name="freeAccompanying">
             </div>
 
             <div class="col-12 text-center" style="margin-top: 10px;">

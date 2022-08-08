@@ -64,10 +64,10 @@
         <center style="margin-top: 10px;">
             <h2>Customer Management</h2>
             <div class = header-panel>
-                <p><a class = "add" href="/customers?action=create&id=${customer.customerId}">Add New User</a></p>
+                <p><a class = "add" href="/customers?action=create&customerId=${customer.customerId}">Add New User</a></p>
             </div>
         </center>
-        <div align="center container-fluid">
+        <div align="center container">
             <table class="table table-info table-striped ">
                 <tr>
                     <th>ID khách hàng</th>

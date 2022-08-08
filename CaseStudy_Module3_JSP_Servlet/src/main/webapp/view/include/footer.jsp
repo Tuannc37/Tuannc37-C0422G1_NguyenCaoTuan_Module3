@@ -53,18 +53,18 @@
             <div class="row">
                 <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
                     <h5 class="text-uppercase">Hướng dẫn di chuyển</h5>
-                    <ul class="list-unstyled mb-0">
+                    <ul class="list-unstyled mb-0 text-decoration-none">
                         <li>
-                            <a href="#!" class="text-white">Cố đô huế</a>
+                            <a href="#!" class="text-white text-decoration-none">Cố đô huế</a>
                         </li>
                         <li>
-                            <a href="#!" class="text-white">Phố cổ hội an</a>
+                            <a href="#!" class="text-white text-decoration-none">Phố cổ hội an</a>
                         </li>
                         <li>
-                            <a href="#!" class="text-white">Thánh địa mỹ sơn</a>
+                            <a href="#!" class="text-white text-decoration-none">Thánh địa mỹ sơn</a>
                         </li>
                         <li>
-                            <a href="#!" class="text-white">Động phong nha</a>
+                            <a href="#!" class="text-white text-decoration-none">Động phong nha</a>
                         </li>
                     </ul>
                 </div>
@@ -73,16 +73,16 @@
 
                     <ul class="list-unstyled mb-0">
                         <li>
-                            <a href="#!" class="text-white">Giá Công Bố</a>
+                            <a href="#!" class="text-white text-decoration-none">Giá Công Bố</a>
                         </li>
                         <li>
-                            <a href="#!" class="text-white">Lifestyle Blog</a>
+                            <a href="#!" class="text-white text-decoration-none">Lifestyle Blog</a>
                         </li>
                         <li>
-                            <a href="#!" class="text-white">Tuyển Dụng</a>
+                            <a href="#!" class="text-white text-decoration-none">Tuyển Dụng</a>
                         </li>
                         <li>
-                            <a href="#!" class="text-white">Liên hệ</a>
+                            <a href="#!" class="text-white text-decoration-none">Liên hệ</a>
                         </li>
                     </ul>
                 </div>
@@ -91,16 +91,16 @@
 
                     <ul class="list-unstyled mb-0">
                         <li>
-                            <a href="#!" class="text-white">Link 1</a>
+                            <a href="#!" class="text-white text-decoration-none">Link 1</a>
                         </li>
                         <li>
-                            <a href="#!" class="text-white">Link 2</a>
+                            <a href="#!" class="text-white text-decoration-none">Link 2</a>
                         </li>
                         <li>
-                            <a href="#!" class="text-white">Link 3</a>
+                            <a href="#!" class="text-white text-decoration-none">Link 3</a>
                         </li>
                         <li>
-                            <a href="#!" class="text-white">Link 4</a>
+                            <a href="#!" class="text-white text-decoration-none">Link 4</a>
                         </li>
                     </ul>
                 </div>
@@ -109,17 +109,17 @@
 
                     <ul class="list-unstyled mb-0">
                         <li>
-                            <a href="#!" class="text-white">103 - 105 Vo Nguyen Giap Street, Khue My Ward,
+                            <a href="#!" class="text-white text-decoration-none">103 - 105 Vo Nguyen Giap Street, Khue My Ward,
                                 Ngu Hanh Son District, Danang City, Vietnam</a>
                         </li>
                         <li>
-                            <a href="#!" class="text-white">Tel.: 84-236-3847 333/888 * Fax: 84-236-3847 666</a>
+                            <a href="#!" class="text-white text-decoration-none">Tel.: 84-236-3847 333/888 * Fax: 84-236-3847 666</a>
                         </li>
                         <li>
-                            <a href="#!" class="text-white">Email: reservation@furamavietnam.com * www.furamavietnam.com</a>
+                            <a href="#!" class="text-white text-decoration-none">Email: reservation@furamavietnam.com * www.furamavietnam.com</a>
                         </li>
                         <li>
-                            <a href="#!" class="text-white">Sabre-GD 032771, Worldspan- GD DADFU</a>
+                            <a href="#!" class="text-white text-decoration-none">Sabre-GD 032771, Worldspan- GD DADFU</a>
                         </li>
                     </ul>
                 </div>
