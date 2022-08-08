@@ -27,6 +27,22 @@ public class CustomerServlet extends HttpServlet {
         customerService = new CustomerServiceImpl();
     }
 
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String action = request.getParameter("action");
+        if (action == null){
+            action = "";
+        }
+        switch (action){
+            case "create":
+                showFormCreate(request,response);
+                break;
+            case "update":
+                showFormUpdate(request,response);
+                break;
+            default:
+                showCustomerList(request,response);
+        }
+    }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
@@ -49,22 +65,7 @@ public class CustomerServlet extends HttpServlet {
         }
     }
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String action = request.getParameter("action");
-        if (action == null){
-            action = "";
-        }
-        switch (action){
-            case "create":
-                showFormCreate(request,response);
-                break;
-            case "update":
-                showFormUpdate(request,response);
-                break;
-            default:
-                showCustomerList(request,response);
-        }
-    }
+
 
     private void showFormCreate(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<CustomerType> typeList = customerTypeRepository.selectAll();

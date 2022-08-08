@@ -74,29 +74,51 @@
 
         <div class="col-md-12">
             <label for="inputCity" class="form-label">Kiểu thuê:</label>
-            <input type="text" class="form-control" id="inputCity" value = "${facility.rentTypeId}" name="rentTypeId">
+            <select name="rentTypeId" id = "inputCity"  class="form-select">
+                <c:forEach items="${typeList}" var="type">
+                    <c:if test="${type.rentTypeId == facility.rentTypeId}">
+                        <option value="${type.rentTypeId}">${type.rentTypeName}</option>
+                    </c:if>
+                </c:forEach>
+                <c:forEach items="${typeList}" var="type">
+                    <c:if test="${type.rentTypeId != customer.rentTypeId}">
+                        <option value="${type.rentTypeId}">${type.rentTypeName}</option>
+                    </c:if>
+                </c:forEach>
+            </select>
         </div>
 
         <div class="col-md-12">
-            <label for="inputTypeId" class="form-label">Loại dịch vụ:</label>
-            <input type="text" class="form-control" id="inputTypeId" value = "${facility.rentTypeId}" name="rentTypeId">
+            <label class="form-label">Loại dịch vụ:</label>
+            <select name="serviceTypeId" class="form-select" >
+                <c:forEach items="${serviceTypeList}" var="type">
+                    <c:if test="${type.serviceTypeId == facility.serviceTypeId}">
+                        <option value="${type.serviceTypeId}">${type.serviceTypeName}</option>
+                    </c:if>
+                </c:forEach>
+                <c:forEach items="${serviceTypeList}" var="type">
+                    <c:if test="${type.serviceTypeId != customer.serviceTypeId}">
+                        <option value="${type.serviceTypeId}">${type.serviceTypeName}</option>
+                    </c:if>
+                </c:forEach>
+            </select>
         </div>
 
-        <div class="col-md-12" id="dv1" style="display: none">
+        <div class="col-md-12" id="dv1" >
             <label for="standard_room" class="form-label">Tiêu chuẩn phòng:</label>
             <input type="text" class="form-control" id="standard_room" value = "${facility.standardRoom}" name="standardRoom">
         </div>
-        <div class="col-md-12" id="dv2" style="display: none">
+        <div class="col-md-12" id="dv2" >
             <label for="description_other_convenience" class="form-label">Mô tả tiện nghi khác:</label>
             <input type="text" class="form-control" id="description_other_convenience" value = "${facility.description}" name="description">
         </div>
 
-        <div class="col-md-12" id="dv4" style="display: none">
+        <div class="col-md-12" id="dv4">
             <label for="pool_area" class="form-label">Diện tích hồ bơi:</label>
             <input type="text" class="form-control" id="pool_area"  value = "${facility.poolArea}" name="poolArea">
         </div>
 
-        <div class="col-md-12" id="dv3" style="display: none">
+        <div class="col-md-12" id="dv3" >
             <label for="number_of_floors" class="form-label">Số tầng:</label>
             <input type="text" class="form-control" id="number_of_floors" value = "${facility.numberOfFloor}" name="numberOfFloor">
         </div>

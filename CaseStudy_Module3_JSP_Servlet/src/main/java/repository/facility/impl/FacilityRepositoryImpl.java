@@ -24,7 +24,7 @@ public class FacilityRepositoryImpl implements IFacilityRepository {
             " ma_loai_dich_vu = ?," +
             " tieu_chuan_phong = ?," +
             " mo_ta_tien_nghi_khac = ?," +
-            " dien_tich_ho_boi = ?" +
+            " dien_tich_ho_boi = ?," +
             " so_tang = ?" +
             " where ma_dich_vu = ?;";
 
