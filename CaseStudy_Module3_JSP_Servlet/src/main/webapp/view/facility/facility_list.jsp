@@ -83,7 +83,6 @@
                     <th>Mô tả khác</th>
                     <th>Diện tích hồ bơi</th>
                     <th>Số tầng</th>
-                    <th>Dịch vụ đi kèm</th>
                     <th>Sửa</th>
                     <th>Xóa</th>
                 </tr>
@@ -101,7 +100,6 @@
                         <td><c:out value="${facility.description}"/></td>
                         <td><c:out value="${facility.poolArea}"/></td>
                         <td><c:out value="${facility.numberOfFloor}"/></td>
-                        <td><c:out value="${facility.freeAccompanying}"/></td>
                         <td> <a class="bg-primary text-white" href="/facility?action=update&serviceId=${facility.serviceId}">Edit</a></td>
                         <td>
                             <button onclick="showInfoDelete('${facility.serviceId}','${facility.serviceName}')" type="button" class="btn btn-primary bg-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">

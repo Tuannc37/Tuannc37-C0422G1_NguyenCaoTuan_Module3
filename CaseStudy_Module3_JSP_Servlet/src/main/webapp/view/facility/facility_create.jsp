@@ -54,11 +54,10 @@
         <form class="form-group" action="" method="post">
             <div class="col-md-12">
                 <label class="form-label">Loại dịch vụ:</label>
-                <select name=""  class="form-select" onchange="showServiceInput(this)">
-                    <option value="None" >Chọn loại dịch vụ</option>
-                    <option value="Villa" >Villa</option>
-                    <option value="House" >House</option>
-                    <option value="Room" >Room</option>
+                <select name="serviceTypeId" class="form-select" onchange="showServiceInput(this.value)">
+                    <c:forEach items="${serviceTypeList}" var="type">
+                        <option value="${type.serviceTypeId}">${type.serviceTypeName}</option>
+                    </c:forEach>
                 </select>
             </div>
             <div class="col-md-12">
@@ -79,7 +78,11 @@
             </div>
             <div class="col-md-12">
                 <label for="inputCity" class="form-label">Kiểu thuê:</label>
-                <input type="text" class="form-control" id="inputCity" name="rentTypeId">
+                <select name="rentTypeId" id = "inputCity"  class="form-select">
+                    <c:forEach items="${typeList}" var="type">
+                        <option value="${type.rentTypeId}">${type.rentTypeName}</option>
+                    </c:forEach>
+                </select>
             </div>
 
             <%--Villa và House sẽ có chung--%>
@@ -93,19 +96,13 @@
             </div>
             <div class="col-md-12" id="dv3" style="display: none">
                 <label for="number_of_floors" class="form-label">Số tầng:</label>
-                <input type="text" class="form-control" id="number_of_floors" name="numberOfFloor">
+                <input type="text" value="0" class="form-control" id="number_of_floors" name="numberOfFloor">
             </div>
 
             <%--Riêng Villa sẽ có thêm--%>
             <div class="col-md-12" id="dv4" style="display: none">
                 <label for="pool_area" class="form-label">Diện tích hồ bơi:</label>
-                <input type="text" class="form-control" id="pool_area" name="poolArea">
-            </div>
-
-            Riêng Room sẽ có thêm
-            <div class="col-md-12" id="dv5" style="display: none">
-                <label for="facility_free" class="form-label">Dịch vụ miễn phí đi kèm:</label>
-                <input type="text" class="form-control" id="facility_free" name="freeAccompanying">
+                <input type="text" value="0" class="form-control" id="pool_area" name="poolArea">
             </div>
 
             <div class="col-12 text-center" style="margin-top: 10px;">
@@ -115,39 +112,61 @@
     </div>
 
     <script>
-        function showServiceInput(value) {
-            const v = value.value;
-            switch (v) {
-                case 'None':
-                    document.getElementById("dv1").style.display="none";
-                    document.getElementById("dv2").style.display="none";
-                    document.getElementById("dv3").style.display="none";
-                    document.getElementById("dv4").style.display="none";
-                    document.getElementById("dv5").style.display="none";
-                    break;
-                case "Villa":
+        function showServiceInput(v) {
+            console.log(v)
+            console.log(typeof v)
+            switch (v){
+                case "1":
                     document.getElementById("dv1").style.display="block";
                     document.getElementById("dv2").style.display="block";
                     document.getElementById("dv3").style.display="block";
                     document.getElementById("dv4").style.display="block";
-                    document.getElementById("dv5").style.display="none";
                     break;
-                case "House":
+                case "2":
                     document.getElementById("dv1").style.display="block";
                     document.getElementById("dv2").style.display="block";
                     document.getElementById("dv3").style.display="block";
                     document.getElementById("dv4").style.display="none";
-                    document.getElementById("dv5").style.display="none";
                     break;
-                case "Room":
+                case "3":
                     document.getElementById("dv1").style.display="none";
                     document.getElementById("dv2").style.display="none";
                     document.getElementById("dv3").style.display="none";
                     document.getElementById("dv4").style.display="none";
-                    document.getElementById("dv5").style.display="block";
                     break;
+                default:
+                    document.getElementById("dv1").style.display="none";
+                    document.getElementById("dv2").style.display="none";
+                    document.getElementById("dv3").style.display="none";
+                    document.getElementById("dv4").style.display="none";
             }
         }
     </script>
 </body>
 </html>
+<%--     switch (v) {
+                case 1:
+                    document.getElementById("dv1").style.display="block";
+                    document.getElementById("dv2").style.display="block";
+                    document.getElementById("dv3").style.display="block";
+                    document.getElementById("dv4").style.display="block";
+                    break;
+                case 2:
+                    document.getElementById("dv1").style.display="block";
+                    document.getElementById("dv2").style.display="block";
+                    document.getElementById("dv3").style.display="block";
+                    document.getElementById("dv4").style.display="none";
+                    break;
+                case 3:
+                    document.getElementById("dv1").style.display="none";
+                    document.getElementById("dv2").style.display="none";
+                    document.getElementById("dv3").style.display="none";
+                    document.getElementById("dv4").style.display="none";
+                    break;
+                default:
+                    document.getElementById("dv1").style.display="none";
+                    document.getElementById("dv2").style.display="none";
+                    document.getElementById("dv3").style.display="none";
+                    document.getElementById("dv4").style.display="none";
+                    break;
+            }--%>

@@ -91,7 +91,6 @@ public class FacilityServlet extends HttpServlet {
         String description = request.getParameter("description");
         double poolArea = Double.parseDouble(request.getParameter("poolArea"));
         int numberOfFloor = Integer.parseInt(request.getParameter("numberOfFloor"));
-        String freeAccompanying = request.getParameter("freeAccompanying");
         Facility facility = new Facility(serviceName,
                 serviceArea,
                 serviceCost,
@@ -101,13 +100,13 @@ public class FacilityServlet extends HttpServlet {
                 standardRoom,
                 description,
                 poolArea,
-                numberOfFloor,
-                freeAccompanying);
+                numberOfFloor);
         facilityService.insertFacility(facility);
         showFacilityList(request,response);
     }
 
     private void update(HttpServletRequest request, HttpServletResponse response) throws SQLException {
+        int serviceId = Integer.parseInt(request.getParameter("serviceId"));
         String serviceName = request.getParameter("serviceName");
         int serviceArea = Integer.parseInt(request.getParameter("serviceArea"));
         double serviceCost = Double.parseDouble(request.getParameter("serviceCost"));
@@ -118,9 +117,8 @@ public class FacilityServlet extends HttpServlet {
         String description = request.getParameter("description");
         double poolArea = Double.parseDouble(request.getParameter("poolArea"));
         int numberOfFloor = Integer.parseInt(request.getParameter("numberOfFloor"));
-        String freeAccompanying = request.getParameter("freeAccompanying");
 
-        Facility facility = new Facility(serviceName, serviceArea, serviceCost,serviceMaxPeople,rentTypeId,serviceTypeId,standardRoom,description,poolArea,numberOfFloor,freeAccompanying);
+        Facility facility = new Facility(serviceId, serviceName, serviceArea, serviceCost,serviceMaxPeople,rentTypeId,serviceTypeId,standardRoom,description,poolArea,numberOfFloor);
         facilityService.updateFacility(facility);
         showFacilityList(request,response);
     }
@@ -151,7 +149,7 @@ public class FacilityServlet extends HttpServlet {
     private void showFormCreate(HttpServletRequest request, HttpServletResponse response) {
         List<RentType> rentTypeList = rentTypeService.selectAll();
         List<ServiceType> serviceTypeList = serviceTypeService.selectAll();
-        request.setAttribute("rentTypeList",rentTypeList);
+        request.setAttribute("typeList",rentTypeList);
         request.setAttribute("serviceTypeList",serviceTypeList);
         RequestDispatcher dispatcher = request.getRequestDispatcher("view/facility/facility_create.jsp");
         try {

@@ -101,11 +101,6 @@
             <input type="text" class="form-control" id="number_of_floors" value = "${facility.numberOfFloor}" name="numberOfFloor">
         </div>
 
-        <div class="col-md-12" id="dv5" style="display: none">
-            <label for="facility_free" class="form-label">Dịch vụ miễn phí đi kèm:</label>
-            <input type="text" class="form-control" id="facility_free" value = "${facility.freeAccompanying}" name="freeAccompanying">
-        </div>
-
         <div class="col-12 text-center" style="margin-top: 10px;">
             <button type="submit" class="btn btn-primary">Cập nhật</button>
         </div>

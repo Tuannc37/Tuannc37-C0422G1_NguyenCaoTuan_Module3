@@ -12,12 +12,11 @@ public class Facility {
     private String description;
     private double poolArea;
     private int numberOfFloor;
-    private String freeAccompanying;
 
-    public Facility(String serviceName, int serviceArea, double serviceCost, int serviceMaxPeople, int rentTypeId, int serviceTypeId, String standardRoom, String description, double poolArea, int numberOfFloor, String freeAccompanying) {
+    public Facility(String serviceName, int serviceArea, double serviceCost, int serviceMaxPeople, int rentTypeId, int serviceTypeId, String standardRoom, String description, double poolArea, int numberOfFloor) {
     }
 
-    public Facility(int serviceId, String serviceName, int serviceArea, double serviceCost, int serviceMaxPeople, int rentTypeId, int serviceTypeId, String standardRoom, String description, double poolArea, int numberOfFloor, String freeAccompanying) {
+    public Facility(int serviceId, String serviceName, int serviceArea, double serviceCost, int serviceMaxPeople, int rentTypeId, int serviceTypeId, String standardRoom, String description, double poolArea, int numberOfFloor) {
         this.serviceId = serviceId;
         this.serviceName = serviceName;
         this.serviceArea = serviceArea;
@@ -29,7 +28,6 @@ public class Facility {
         this.description = description;
         this.poolArea = poolArea;
         this.numberOfFloor = numberOfFloor;
-        this.freeAccompanying = freeAccompanying;
     }
 
     public int getServiceId() {
@@ -120,11 +118,4 @@ public class Facility {
         this.numberOfFloor = numberOfFloor;
     }
 
-    public String getFreeAccompanying() {
-        return freeAccompanying;
-    }
-
-    public void setFreeAccompanying(String freeAccompanying) {
-        this.freeAccompanying = freeAccompanying;
-    }
 }

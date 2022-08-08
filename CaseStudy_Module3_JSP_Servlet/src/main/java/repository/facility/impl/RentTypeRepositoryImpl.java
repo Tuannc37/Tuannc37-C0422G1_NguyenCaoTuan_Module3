@@ -14,10 +14,25 @@ import java.util.List;
 import java.util.Map;
 
 public class RentTypeRepositoryImpl implements IRentTypeRepository {
+    private final String SELECT_RENT_TYPE = "select * from `kieu_thue`;";
 
     @Override
     public List<RentType> selectAll() {
-        return null;
+        List<RentType> rentTypeList = new ArrayList<>();
+        Connection connection = BaseRepository.getConnection();
+        try {
+            PreparedStatement ps = connection.prepareStatement(SELECT_RENT_TYPE);
+            ResultSet resultSet = ps.executeQuery();
+            while (resultSet.next()){
+                int rentTypeId = resultSet.getInt("ma_kieu_thue");
+                String rentTypeName = resultSet.getString("ten_kieu_thue");
+                RentType rentType = new RentType(rentTypeId,rentTypeName);
+                rentTypeList.add(rentType);
+            }
+        }catch (SQLException throwables){
+            throwables.printStackTrace();
+        }
+        return rentTypeList;
     }
 
     @Override

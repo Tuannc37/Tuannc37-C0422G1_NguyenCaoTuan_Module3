@@ -13,7 +13,7 @@ public class FacilityRepositoryImpl implements IFacilityRepository {
     private final String SELECT_ALL_FACILITY = "SELECT * FROM dich_vu";
     private final String SELECT_FACILITY_BY_ID = "SELECT * FROM dich_vu where ma_dich_vu = ?;";
     private final String INSERT_NEW_FACILITY = "insert into dich_vu (ten_dich_vu, dien_tich, chi_phi_thue, so_nguoi_toi_da, ma_kieu_thue, ma_loai_dich_vu, tieu_chuan_phong, mo_ta_tien_nghi_khac,dien_tich_ho_boi,so_tang)\n" +
-            "values (?,?,?,?,?,?,?,?,?,?,?);";
+            "values (?,?,?,?,?,?,?,?,?,?);";
     private final String DELETE_FACILITY = "delete from dich_vu where ma_dich_vu = ?;";
     private final String SEARCH_BY_KEYWORD = "select * from dich_vu where ten_dich_vu like ?;";
     private final String UPDATE_FACILITY = "update dich_vu set ten_dich_vu = ?," +
@@ -47,7 +47,6 @@ public class FacilityRepositoryImpl implements IFacilityRepository {
                 String description = resultSet.getString("mo_ta_tien_nghi_khac");
                 double poolArea = resultSet.getDouble("dien_tich_ho_boi");
                 int numberOfFloor = resultSet.getInt("so_tang");
-                String freeAccompanying = resultSet.getString("dich_vu_mien_phi_di_kem");
 
                 Facility facility = new Facility(serviceId,
                         serviceName,
@@ -59,8 +58,7 @@ public class FacilityRepositoryImpl implements IFacilityRepository {
                         standardRoom,
                         description,
                         poolArea,
-                        numberOfFloor,
-                        freeAccompanying);
+                        numberOfFloor);
                 facilityList.add(facility);
             }
         }catch (SQLException throwables){
@@ -90,7 +88,6 @@ public class FacilityRepositoryImpl implements IFacilityRepository {
                 String description = resultSet.getString("mo_ta_tien_nghi_khac");
                 double poolArea = resultSet.getDouble("dien_tich_ho_boi");
                 int numberOfFloor = resultSet.getInt("so_tang");
-                String freeAccompanying = resultSet.getString("dich_vu_mien_phi_di_kem");
                 facility = new Facility(serviceId,
                         serviceName,
                         serviceArea,
@@ -101,8 +98,7 @@ public class FacilityRepositoryImpl implements IFacilityRepository {
                         standardRoom,
                         description,
                         poolArea,
-                        numberOfFloor,
-                        freeAccompanying);
+                        numberOfFloor);
             }
         } catch (SQLException e) {
             printSQLException(e);
@@ -126,7 +122,6 @@ public class FacilityRepositoryImpl implements IFacilityRepository {
             ps.setString(8,facility.getDescription());
             ps.setDouble(9,facility.getPoolArea());
             ps.setInt(10,facility.getNumberOfFloor());
-            ps.setString(11,facility.getFreeAccompanying());
             ps.executeUpdate();
         }catch (SQLException throwables){
             throwables.printStackTrace();
@@ -148,7 +143,7 @@ public class FacilityRepositoryImpl implements IFacilityRepository {
             ps.setString(8,facility.getDescription());
             ps.setDouble(9,facility.getPoolArea());
             ps.setInt(10,facility.getNumberOfFloor());
-            ps.setString(11,facility.getFreeAccompanying());
+            ps.setInt(11,facility.getServiceId());
             return ps.executeUpdate()>0;
         }catch (SQLException throwables){
             throwables.printStackTrace();
@@ -190,7 +185,6 @@ public class FacilityRepositoryImpl implements IFacilityRepository {
                 String description = resultSet.getString("mo_ta_tien_nghi_khac");
                 double poolArea = resultSet.getDouble("dien_tich_ho_boi");
                 int numberOfFloor = resultSet.getInt("so_tang");
-                String freeAccompanying = resultSet.getString("dich_vu_mien_phi_di_kem");
                 Facility facility = new Facility(serviceId,
                         serviceName,
                         serviceArea,
@@ -201,8 +195,7 @@ public class FacilityRepositoryImpl implements IFacilityRepository {
                         standardRoom,
                         description,
                         poolArea,
-                        numberOfFloor,
-                        freeAccompanying);
+                        numberOfFloor);
                 facilityList.add(facility);
             }
         }catch (SQLException throwables){

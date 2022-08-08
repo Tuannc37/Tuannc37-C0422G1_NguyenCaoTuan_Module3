@@ -78,7 +78,7 @@ create table dich_vu(
 	mo_ta_tien_nghi_khac varchar(45),
 	dien_tich_ho_boi double,
 	so_tang int,
-	dich_vu_mien_phi_di_kem text,
+	-- dich_vu_mien_phi_di_kem text,
     foreign key (ma_kieu_thue) 
 		references kieu_thue(ma_kieu_thue) on delete cascade,
     foreign key (ma_loai_dich_vu) 
