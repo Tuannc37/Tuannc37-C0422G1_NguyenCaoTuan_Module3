@@ -66,6 +66,11 @@
             <div class = header-panel>
                 <p><a class = "add" href="/customers?action=create&customerId=${customer.customerId}">Add New User</a></p>
             </div>
+            <h3 style="color: red">
+                <c:if test="${message!=null}">
+                    <p>${message}</p>
+                </c:if>
+            </h3>
         </center>
         <div align="center container">
             <table class="table table-info table-striped ">

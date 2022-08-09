@@ -68,6 +68,11 @@
             <div class = header-panel>
                 <p><a class = "add" href="/facility?action=create&serviceId=${facility.serviceId}">Add New Facility</a></p>
             </div>
+            <h3 style="color: red">
+                <c:if test="${message!=null}">
+                    <p>${message}</p>
+                </c:if>
+            </h3>
         </center>
         <div align="center">
             <table class="table table-info table-striped container">

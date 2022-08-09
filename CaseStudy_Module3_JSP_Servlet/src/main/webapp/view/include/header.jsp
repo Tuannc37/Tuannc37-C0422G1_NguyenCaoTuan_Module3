@@ -27,7 +27,7 @@
                             <a class="nav-link text-light" href="/facility">Service</a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link text-light" href="#">Contract</a>
+                            <a class="nav-link text-light" href="contract/contract_list.jsp">Contract</a>
                         </li>
                     </ul>
                 </div>

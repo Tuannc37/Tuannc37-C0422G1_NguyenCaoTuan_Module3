@@ -115,7 +115,7 @@
                 <div class="w-100 text-center">
                     <button type="submit" class="btn btn-success w-50" style="alignment: center">Lưu</button>
                 </div>
-                <div class="w-100 text-center mt-20">
+                <div class="w-100 text-center mt-20" id = >
                     <p style="color: forestgreen; alignment: center!important;">${message}</p>
                 </div>
             </form>
@@ -242,6 +242,13 @@
             <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
         </div>
     </footer>
-
+    <script>
+        window.onload = function () {
+            let mess = document.getElementById("mess").value;
+            if (mess != null && mess  !== "") {
+                alert(mess);
+            }
+        }
+    </script>
 </body>
 </html>

@@ -104,14 +104,16 @@ public class FacilityServlet extends HttpServlet {
         Map<String, String> validate = facilityService.insertFacility(facility);
         if (validate.isEmpty()){
             request.setAttribute("message","Thêm mới thành công");
+            showFacilityList(request,response);
         }else {
             request.setAttribute("message","Thêm mới không thành công");
             for (Map.Entry<String,String> entry: validate.entrySet()){
                 request.setAttribute(entry.getKey(),entry.getValue());
             }
             request.setAttribute("facility",facility);
+            showFormCreate(request,response);
         }
-        showFormCreate(request,response);
+
     }
 
     private void update(HttpServletRequest request, HttpServletResponse response) throws SQLException {
@@ -131,14 +133,16 @@ public class FacilityServlet extends HttpServlet {
         Map<String, String> validate = facilityService.updateFacility(facility);
         if (validate.isEmpty()){
             request.setAttribute("message","Thêm mới thành công");
+            showFacilityList(request,response);
         }else {
             request.setAttribute("message","Thêm mới không thành công");
             for (Map.Entry<String,String> entry: validate.entrySet()){
                 request.setAttribute(entry.getKey(),entry.getValue());
             }
             request.setAttribute("facility",facility);
+            showFormUpdate(request,response);
         }
-        showFormCreate(request,response);
+
     }
 
     private void delete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
