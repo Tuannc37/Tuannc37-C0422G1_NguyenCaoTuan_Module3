@@ -13,6 +13,7 @@ import java.util.regex.Pattern;
 
 public class FacilityServiceImpl implements IFacilityService {
     private IFacilityRepository facilityRepository = new FacilityRepositoryImpl();
+    private final String REGEX_NAME_SERVICE = "^(DV)[-]\\d{4}$";
 
 
     @Override
@@ -26,14 +27,36 @@ public class FacilityServiceImpl implements IFacilityService {
     }
 
     @Override
-    public void insertFacility(Facility facility) {
-       facilityRepository.insertFacility(facility);
+    public Map<String, String> insertFacility(Facility facility) {
+        Map<String, String> map = new HashMap<>();
+        boolean flag = true;
+        if (facility.getServiceArea() < 0 || facility.getServiceCost() < 0 || facility.getServiceMaxPeople() < 0 ||
+                facility.getPoolArea() < 0 || facility.getNumberOfFloor() < 0){
+            flag = false;
+            map.put("number","Số nhỏ hơn 0, vui lòng nhập số dương");
+        }
+        if (flag){
+            facilityRepository.insertFacility(facility);
+        }
+        return map;
     }
 
     @Override
-    public boolean updateFacility(Facility facility) {
-        return facilityRepository.updateFacility(facility);
+    public Map<String, String> updateFacility(Facility facility) {
+        Map<String, String> map = new HashMap<>();
+        boolean flag = true;
+
+        if (facility.getServiceArea() < 0 || facility.getServiceCost() < 0 || facility.getServiceMaxPeople() < 0 ||
+                facility.getPoolArea() < 0 || facility.getNumberOfFloor() < 0){
+            flag = false;
+            map.put("number","Số nhỏ hơn 0, vui lòng nhập số dương");
+        }
+        if (flag){
+            facilityRepository.updateFacility(facility);
+        }
+        return map;
     }
+
 
     @Override
     public boolean deleteFacility(int id) {

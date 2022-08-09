@@ -60,16 +60,19 @@
         <div class="col-md-12">
             <label for="area" class="form-label">Diện tích sử dụng:</label>
             <input type="text" class="form-control" id="area"  value = "${facility.serviceArea}" name="serviceArea">
+            <p style="color: red">${number}</p>
         </div>
 
         <div class="col-md-12">
             <label for="cost" class="form-label">Chi phí thuê:</label>
             <input type="text" class="form-control" id="cost" value = "${facility.serviceCost}"  name="serviceCost" >
+            <p style="color: red">${number}</p>
         </div>
 
         <div class="col-md-12">
             <label for="inputAddress2" class="form-label">Số lượng người tối đa: </label>
             <input type="text" class="form-control" id="inputAddress2" value = "${facility.serviceMaxPeople}" name="serviceMaxPeople" >
+            <p style="color: red">${number}</p>
         </div>
 
         <div class="col-md-12">
@@ -116,15 +119,21 @@
         <div class="col-md-12" id="dv4">
             <label for="pool_area" class="form-label">Diện tích hồ bơi:</label>
             <input type="text" class="form-control" id="pool_area"  value = "${facility.poolArea}" name="poolArea">
+            <p style="color: red">${number}</p>
         </div>
 
         <div class="col-md-12" id="dv3" >
             <label for="number_of_floors" class="form-label">Số tầng:</label>
             <input type="text" class="form-control" id="number_of_floors" value = "${facility.numberOfFloor}" name="numberOfFloor">
+            <p style="color: red">${number}</p>
         </div>
 
         <div class="col-12 text-center" style="margin-top: 10px;">
             <button type="submit" class="btn btn-primary">Cập nhật</button>
+        </div>
+
+        <div class="col-12 text-center" style="margin-top: 10px;">
+            <p style="color: forestgreen; alignment: center!important;">${message}</p>
         </div>
     </form>
 </div>

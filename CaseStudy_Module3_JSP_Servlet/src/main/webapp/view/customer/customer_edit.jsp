@@ -31,13 +31,13 @@
                                 <a class="nav-link text-light" href="view/index.jsp">Home</a>
                             </li>
                             <li class="nav-item active">
-                                <a class="nav-link text-light" href="view/employee/employee_list.jsp">Employee</a>
+                                <a class="nav-link text-light" href="/employee">Employee</a>
                             </li>
                             <li class="nav-item active">
                                 <a class="nav-link text-light" href="/customers">Customer</a>
                             </li>
                             <li class="nav-item active">
-                                <a class="nav-link text-light" href="view/facility/facility_list.jsp">Service</a>
+                                <a class="nav-link text-light" href="/facility">Service</a>
                             </li>
                             <li class="nav-item active">
                                 <a class="nav-link text-light" href="#">Contract</a>
@@ -83,7 +83,7 @@
                     <label for="exampleFormControlInput2">Tên khách hàng:</label>
                     <input type="text" name="customerName" class="form-control" value="${customer.customerName}"
                            id="exampleFormControlInput2">
-                    <p style="color: red"></p>
+                    <p style="color: red">${name}</p>
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlInput3">Ngày sinh:</label>
@@ -108,21 +108,21 @@
                     <input type="text" name="customerIdCard" class="form-control" value="${customer.customerIdCard}"
                            id="exampleFormControlInput4"
                            placeholder="XXXXXXXX or XXXXXXXXXX" required>
-                    <p style="color: red"></p>
+                    <p style="color: red">${idCard}</p>
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlInput5">Số điện thoại:</label>
                     <input type="text" name="customerPhone" class="form-control" value="${customer.customerPhone}"
                            id="exampleFormControlInput5"
                            placeholder="(84)90xxxxxxx or (84)91xxxxxxx" required>
-                    <p style="color: red"></p>
+                    <p style="color: red">${phone}</p>
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlInput6">Email:</label>
                     <input type="text" name="customerEmail" class="form-control" value="${customer.customerEmail}"
                            id="exampleFormControlInput6"
                            placeholder="abcxyz@gmail.com">
-                    <p style="color: red"></p>
+                    <p style="color: red">${email}</p>
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlInput7">Địa chỉ:</label>
@@ -132,8 +132,8 @@
                 <div class="w-100 mt-20 text-center">
                     <button type="submit" class="btn btn-success w-50" style="alignment: center">Lưu</button>
                 </div>
-                <div class="w-100 ">
-                    <p style="color: forestgreen; alignment: center!important;"></p>
+                <div class="w-100 text-center mt-20">
+                    <p style="color: forestgreen; alignment: center!important;">${message}</p>
                 </div>
             </form>
         </div>

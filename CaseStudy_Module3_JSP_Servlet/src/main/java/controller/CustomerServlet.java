@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Map;
 
 
 @WebServlet(name = "CustomerServlet", urlPatterns = "/customers")
@@ -51,10 +52,18 @@ public class CustomerServlet extends HttpServlet {
         }
         switch (action){
             case "create":
-                insertCustomer(request,response);
+                try {
+                    insertCustomer(request,response);
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
                 break;
             case "update":
-                update(request,response);
+                try {
+                    update(request,response);
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
                 break;
             case "delete":
                 delete(request,response);
@@ -64,7 +73,6 @@ public class CustomerServlet extends HttpServlet {
                 break;
         }
     }
-
 
 
     private void showFormCreate(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -109,7 +117,7 @@ public class CustomerServlet extends HttpServlet {
         }
     }
 
-    private void update(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    private void update(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
         int customerId = Integer.parseInt(request.getParameter("customerId"));
         int customerTypeId = Integer.parseInt(request.getParameter("customerTypeId"));
         String customerName = request.getParameter("customerName");
@@ -122,15 +130,30 @@ public class CustomerServlet extends HttpServlet {
 
 
         Customer customer = new Customer(customerId, customerTypeId, customerName,customerBirth,customerGender,customerIdCard,customerPhone,customerEmail,customerAddress);
+        Map<String, String> validate = customerService.updateCustomer(customer);
+        if (validate.isEmpty()){
+            request.setAttribute("message","Cập nhật thành công");
+        }else {
+            request.setAttribute("message","Cập nhật không thành công");
+            for (Map.Entry<String,String> entry: validate.entrySet()){
+                request.setAttribute(entry.getKey(),entry.getValue());
+            }
+            request.setAttribute("customer",customer);
+
+        }
+        List<CustomerType> typeList = customerTypeRepository.selectAll();
+        request.setAttribute("typeList",typeList);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("view/customer/customer_edit.jsp");
         try {
-            customerService.updateCustomer(customer);
-        } catch (SQLException e) {
+            dispatcher.forward(request,response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
             e.printStackTrace();
         }
-        showCustomerList(request,response);
     }
 
-    private void insertCustomer(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    private void insertCustomer(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
         int customerTypeId = Integer.parseInt(request.getParameter("customerTypeId"));
         String customerName = request.getParameter("customerName");
         String customerBirth = request.getParameter("customerBirth");
@@ -141,12 +164,27 @@ public class CustomerServlet extends HttpServlet {
         String customerAddress = request.getParameter("customerAddress");
 
         Customer customer = new Customer(customerTypeId, customerTypeId, customerName,customerBirth,customerGender,customerIdCard,customerPhone,customerEmail,customerAddress);
+        Map<String, String> validate = customerService.insertCustomer(customer);
+        if (validate.isEmpty()){
+            request.setAttribute("message","Thêm mới thành công");
+        }else {
+            request.setAttribute("message","Thêm mới không thành công");
+            for (Map.Entry<String,String> entry: validate.entrySet()){
+                request.setAttribute(entry.getKey(),entry.getValue());
+            }
+            request.setAttribute("customer",customer);
+
+        }
+        List<CustomerType> typeList = customerTypeRepository.selectAll();
+        request.setAttribute("typeList",typeList);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("view/customer/customer_create.jsp");
         try {
-            customerService.insertCustomer(customer);
-        } catch (SQLException e) {
+            dispatcher.forward(request,response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
             e.printStackTrace();
         }
-        showCustomerList(request,response);
     }
 
 

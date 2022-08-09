@@ -60,22 +60,30 @@
                     </c:forEach>
                 </select>
             </div>
+
             <div class="col-md-12">
                 <label for="name" class="form-label">Tên dịch vụ:</label>
                 <input type="text" class="form-control" id="name" name="serviceName">
             </div>
+
             <div class="col-md-12">
                 <label for="area" class="form-label">Diện tích sử dụng:</label>
                 <input type="text" class="form-control" id="area" name="serviceArea">
+                <p style="color: red">${number}</p>
             </div>
+
             <div class="col-md-12">
                 <label for="cost" class="form-label">Chi phí thuê:</label>
                 <input type="text" class="form-control" id="cost"  name="serviceCost" >
+                <p style="color: red">${number}</p>
             </div>
+
             <div class="col-md-12">
                 <label for="inputAddress2" class="form-label">Số lượng người tối đa: </label>
                 <input type="text" class="form-control" id="inputAddress2"  name="serviceMaxPeople" >
+                <p style="color: red">${number}</p>
             </div>
+
             <div class="col-md-12">
                 <label for="inputCity" class="form-label">Kiểu thuê:</label>
                 <select name="rentTypeId" id = "inputCity"  class="form-select">
@@ -90,23 +98,30 @@
                 <label for="standard_room" class="form-label">Tiêu chuẩn phòng:</label>
                 <input type="text" class="form-control" id="standard_room" name="standardRoom">
             </div>
+
             <div class="col-md-12" id="dv2" style="display: none">
                 <label for="description_other_convenience" class="form-label">Mô tả tiện nghi khác:</label>
                 <input type="text" class="form-control" id="description_other_convenience" name="description">
             </div>
+
             <div class="col-md-12" id="dv3" style="display: none">
                 <label for="number_of_floors" class="form-label">Số tầng:</label>
                 <input type="text" value="0" class="form-control" id="number_of_floors" name="numberOfFloor">
+                <p style="color: red">${number}</p>
             </div>
 
-            <%--Riêng Villa sẽ có thêm--%>
+
             <div class="col-md-12" id="dv4" style="display: none">
                 <label for="pool_area" class="form-label">Diện tích hồ bơi:</label>
                 <input type="text" value="0" class="form-control" id="pool_area" name="poolArea">
+                <p style="color: red">${number}</p>
             </div>
 
             <div class="col-12 text-center" style="margin-top: 10px;">
                 <button type="submit" class="btn btn-primary">Cập nhật</button>
+            </div>
+            <div class="col-12 text-center" style="margin-top: 10px;">
+                <p style="color: forestgreen; alignment: center!important;">${message}</p>
             </div>
         </form>
     </div>

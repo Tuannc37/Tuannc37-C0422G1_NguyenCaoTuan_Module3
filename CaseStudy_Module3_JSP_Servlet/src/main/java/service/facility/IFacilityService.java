@@ -12,12 +12,13 @@ public interface IFacilityService {
 
     public Facility selectFacility(int id);
 
-    public void insertFacility(Facility facility);
+    public Map<String, String> insertFacility(Facility facility);
 
-    public boolean updateFacility(Facility facility);
+    public Map<String, String> updateFacility(Facility facility);
 
     public boolean deleteFacility(int id);
 
     public List<Facility> searchFacility(String keyword);
+
 
 }

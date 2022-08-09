@@ -27,8 +27,6 @@ public class CustomerRepositoryImpl implements ICustomerRepository {
     private static final String SELECT_USER_BY_NAME = "SELECT * FROM khach_hang WHERE ho_ten like ?;";
 
 
-
-
     @Override
     public List<Customer> selectAllCustomer() {
         List<Customer> customerList = new ArrayList<>();
