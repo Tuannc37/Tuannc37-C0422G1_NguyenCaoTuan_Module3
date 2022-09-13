@@ -25,7 +25,6 @@ public class UserRepository implements IUserRepository {
     public void insertUser(User user) throws SQLException {
         System.out.println(INSERT_USERS_SQL);
         Connection connection = baseRepository.getConnection();
-
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(INSERT_USERS_SQL);
             preparedStatement.setString(1, user.getName());
